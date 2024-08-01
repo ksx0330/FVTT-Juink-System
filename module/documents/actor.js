@@ -2,11 +2,16 @@
 import { JuinkEffectDialog } from "../dialogs/effect-dialog.js";
 
 export class JuinkActor extends Actor {
-    
-    /** @inheritdoc */
+
+    /** @override */
+    async _preCreate(data, options, user) {
+        await super._preCreate(data, options, user);
+        this.prototypeToken.updateSource({ actorLink: true });
+    }
+
+    /** @override */
     async _onCreate(data, options, userId) {
         super._onCreate(data, options, userId);
-        this.prototypeToken.updateSource({ actorLink: true });
 
         if (this.type != "character")
             return;
