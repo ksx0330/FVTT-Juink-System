@@ -20,3 +20,7 @@ Images
 <img src="https://github.com/user-attachments/assets/d634517e-ab71-4f25-9807-d70fba4dece5" width=240>
 
 
+Legal
+------------
+本作は、「NEW GAME PLUS」が権利を有する『呪印感染』の二次創作物です。
+（C）NEW GAME PLUS
