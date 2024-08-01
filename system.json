@@ -73,7 +73,7 @@
   "socket": true,
   "primaryTokenAttribute": "life",
   "url": "https://github.com/ksx0330/FVTT-Juink-System",
-  "manifest": "https://raw.githubusercontent.com/ksx0330/FVTT-Juink-System/master/system.json",
-  "download": "https://codeload.github.com/ksx0330/FVTT-Juink-System/zip/master",
+  "manifest": "https://raw.githubusercontent.com/ksx0330/FVTT-Juink-System/main/system.json",
+  "download": "https://codeload.github.com/ksx0330/FVTT-Juink-System/zip/main",
   "license": "LICENSE.txt"
 }
