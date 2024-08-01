@@ -106,12 +106,12 @@ export class JuinkActor extends Actor {
             content: `
                 <h2 style="font-weight: bold; text-align: center;">${game.i18n.localize("Juink.ChangeFateDice")}</h2>
                 <div style="display: flex; gap: 6px; justify-content: center;">
-                    <img onclick="onChange(1)" src="systems/juink/assets/dices/1.png" width=50 height=50>
-                    <img onclick="onChange(2)" src="systems/juink/assets/dices/2.png" width=50 height=50>
-                    <img onclick="onChange(3)" src="systems/juink/assets/dices/3.png" width=50 height=50>
-                    <img onclick="onChange(4)" src="systems/juink/assets/dices/4.png" width=50 height=50>
-                    <img onclick="onChange(5)" src="systems/juink/assets/dices/5.png" width=50 height=50>
-                    <img onclick="onChange(6)" src="systems/juink/assets/dices/6.png" width=50 height=50>
+                    <img onclick="onChange(1)" src="systems/juink/assets/dices/1.PNG" width=50 height=50>
+                    <img onclick="onChange(2)" src="systems/juink/assets/dices/2.PNG" width=50 height=50>
+                    <img onclick="onChange(3)" src="systems/juink/assets/dices/3.PNG" width=50 height=50>
+                    <img onclick="onChange(4)" src="systems/juink/assets/dices/4.PNG" width=50 height=50>
+                    <img onclick="onChange(5)" src="systems/juink/assets/dices/5.PNG" width=50 height=50>
+                    <img onclick="onChange(6)" src="systems/juink/assets/dices/6.PNG" width=50 height=50>
                 </div>
                 <script>
                 async function onChange(answer) {

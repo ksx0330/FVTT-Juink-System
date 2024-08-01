@@ -82,10 +82,10 @@ function updateAlwaysBox() {
         <div class="fate-dices">
             <div class="title">${game.i18n.localize("Juink.FateDices")}</div>
             <div class="dice-box">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[0]}.png" data-pos="0">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[1]}.png" data-pos="1">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[2]}.png" data-pos="2">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[3]}.png" data-pos="3">
+                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[0]}.PNG" data-pos="0">
+                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[1]}.PNG" data-pos="1">
+                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[2]}.PNG" data-pos="2">
+                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[3]}.PNG" data-pos="3">
             </div>
         </div>
     `;

@@ -44,7 +44,7 @@
         },
 
         "details": {
-            "backgroundImg": "systems/juink/assets/default_background.png",
+            "backgroundImg": "systems/juink/assets/default_background.PNG",
             "age": "",
             "gender": "",
             "native": "",
