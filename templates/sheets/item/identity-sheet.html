@@ -1,0 +1,56 @@
+<form class="{{cssClass}} ability identity" autocomplete="off">
+    <button style="display: none;">Input Button Click bypass</button>
+    <section class="item-header">
+        <div class="title-bar">
+            {{#haveActor item}}
+            <button class="float-left delete-item"><i class="fas fa-trash"></i></button>
+            {{/haveActor}}
+            <input class="title" name="name" type="text" value="{{item.name}}" >
+        </div>
+    </section>
+
+
+    <section class="item-header flex">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="data-box">
+            <div class="data-row flex">
+                <span class="title">{{localize "Juink.Scene"}}</span>
+                <input type="text" name="system.timing" value="{{system.timing}}"/>
+                <span class="title inner-check">
+                    {{localize "Juink.Visibility"}} &ensp;
+                    <input class="float-right" name="system.visibility" type="checkbox" {{#if system.visibility}} checked {{/if}}" >
+                </span>
+            </div>
+            
+            <div class="data-row flex">
+                <span class="title">{{localize "Juink.Cost"}}</span>
+                <input type="text" name="system.cost" value="{{system.cost}}"/>
+                <span class="title inner-check">
+                    {{localize "Juink.Obtain"}} &ensp;
+                    <input class="float-right" name="system.obtain" type="checkbox" {{#if system.obtain}} checked {{/if}}" >
+                </span>
+            </div>
+
+            <div class="data-row flex">
+                <span class="title">{{localize "Juink.Target"}}</span>
+                <input type="text" name="system.target" value="{{system.target}}"/>
+
+                <span class="title">{{localize "Juink.Limit"}}</span>
+                <div class="flex">
+                    <select class="select-type" name="system.limit" data-dtype="String">
+                        {{#select system.limit}}
+                        <option value="-">{{localize "Juink.None"}}</option>
+                        <option value="phase">{{localize "Juink.Phase"}}</option>
+                        <option value="scenario">{{localize "Juink.Scenario"}}</option>
+                        {{/select}}
+                    </select>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+
+    {{editor enrichedBiography target="system.description" button=true editable=editable }}
+
+</form>

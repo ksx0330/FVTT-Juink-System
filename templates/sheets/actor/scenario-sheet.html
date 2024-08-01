@@ -1,0 +1,171 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <button style="display: none;">Input Button Click bypass</button>
+
+    <div class="header">
+        <input type="text" class="main-title" name="name" value="{{actor.name}}">
+
+        <div class="scenario-data flex">
+            <img class="profile-img" src="{{actor.img}}" data-edit="img">
+
+            <div class="fate-dices">
+                <div class="title">{{localize "Juink.FateDices"}}</div>
+                <div class="dice-box">
+                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[0]}}.png" data-pos="0">
+                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[1]}}.png" data-pos="1">
+                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[2]}}.png" data-pos="2">
+                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[3]}}.png" data-pos="3">
+    
+                    <input type="hidden" name="system.dice.0" value="{{system.dice.[0]}}" data-dtype="Number">
+                    <input type="hidden" name="system.dice.1" value="{{system.dice.[1]}}" data-dtype="Number">
+                    <input type="hidden" name="system.dice.2" value="{{system.dice.[2]}}" data-dtype="Number">
+                    <input type="hidden" name="system.dice.3" value="{{system.dice.[3]}}" data-dtype="Number">
+                </div>
+            </div>
+
+            <div class="player">
+                <img src="systems/juink/assets/player.png">
+                <div class="title flex">
+                    <input type="text" name="system.player" value="{{system.player}}" placeholder="{{localize "Juink.PC"}}" data-dtype="Number"/>
+                    <span>{{localize "Juink.PCNum"}}</span>
+                </div>
+            </div>
+
+            <div class="juin">
+                <img src="systems/juink/assets/juin.png"/>
+                <div class="title flex">
+                    <input type="text" name="system.juin" value="{{system.juin}}" placeholder="{{localize "Juink.Juin"}}" data-dtype="Number"/>
+                    <span>{{localize "Juink.JuinNum"}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="scenario-contents">
+        <nav class="tabs">
+            <a class="item" data-tab="initial">{{localize "Juink.Memo"}}</a>
+            <a class="item" data-tab="event">{{localize "TYPES.Item.event"}}</a>
+            <a class="item" data-tab="identity">{{localize "TYPES.Item.identity"}}</a>
+        </nav>
+
+        <section class="tab" data-tab="initial">
+            {{editor enrichedDescription target="system.description" button=true editable=editable }}
+        </section>
+    
+        <section class="tab" data-tab="event">
+            <div class="item-list flex">
+                <div class="left-box">
+                    {{#each actor.otherEventList as |item id|}}
+                    <div class="item flex" data-item-id="{{item._id}}">
+                        <img class="show-item" src="{{item.img}}"/>
+                        <div class="name">
+                            <label>{{item.name}}</label>
+                            <div class="life-bar" style="{{life system.life.value system.life.max}}">
+                                <div class="life">
+                                    <input type="text" class="change-event" value="{{system.life.value}}" data-name="system.life.value"/>
+                                    <span> / </span>
+                                    <input type="text" class="change-event" value="{{system.life.max}}" data-name="system.life.max"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <input class="event-select" type="checkbox" {{#if item.system.select}} checked {{/if}}>
+                        <button class="delete-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                    {{/each}}
+
+
+                </div>
+
+                <div class="right-box">
+                    {{#each actor.selectEventList as |item id|}}
+                    <div class="item flex" data-item-id="{{item._id}}">
+                        <img class="show-item" src="{{item.img}}"/>
+                        <div class="name">
+                            <label>{{item.name}}</label>
+                            <div class="life-bar" style="
+                            {{#isSuccess item}}
+                                background: green;
+                            {{else}}
+                                {{life system.life.value system.life.max}}
+                            {{/isSuccess}}">
+                            
+                            {{#isSuccess item}}
+                                Clear
+                            {{else}}
+                                <div class="life">
+                                    <input type="text" class="change-event" value="{{system.life.value}}" data-name="system.life.value"/>
+                                    <span> / </span>
+                                    <input type="text" class="change-event" value="{{system.life.max}}" data-name="system.life.max"/>
+                                </div>
+                            {{/isSuccess}}
+                            </div>
+                        </div>
+                        
+                        {{#isSuccess item}}
+                        {{else}}
+                        <input class="event-select" type="checkbox" {{#if item.system.select}} checked {{/if}}>
+                        {{/isSuccess}}
+                        <button class="delete-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                    {{/each}}
+
+                </div>
+
+            </div>
+
+        </section>
+    
+        <section class="tab" data-tab="identity">
+            <div class="item-list flex">
+                <div class="left-box">
+                    {{#each actor.otherIdentityList as |item id|}}
+                    <div class="item flex" data-item-id="{{item._id}}">
+                        <img class="show-item" src="{{item.img}}"/>
+                        <div class="name">
+                            <label>
+                                {{item.name}}<br>
+                                <span style="color : gray; font-size : smaller;"> 
+                                    {{localize "Juink.Scene"}} : {{item.system.timing}} | 
+                                    {{localize "Juink.Cost"}} : {{item.system.cost}} | <br>
+                                    {{localize "Juink.Target"}} : {{item.system.target}} |
+                                    {{localize "Juink.Limit"}} : {{abilityLimit item.system.limit}}  
+                            </label>
+                        </div>
+                        
+                        <button class="delete-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="right-box">
+                    {{#each actor.selectIdentityList as |item id|}}
+                    {{#visibility item}}
+                    <div class="item flex" data-item-id="{{item._id}}">
+                        <img class="show-item" src="{{item.img}}"/>
+                        <div class="name">
+                            <label>
+                                {{item.name}}<br>
+                                <span style="color : gray; font-size : smaller;"> 
+                                    {{localize "Juink.Scene"}} : {{item.system.timing}} | 
+                                    {{localize "Juink.Cost"}} : {{item.system.cost}} | <br>
+                                    {{localize "Juink.Target"}} : {{item.system.target}} |
+                                    {{localize "Juink.Limit"}} : {{abilityLimit item.system.limit}}  
+                            </label>
+                        </div>
+                        
+                        <button class="delete-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                    {{/visibility}}
+                    {{/each}}
+
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    
+
+</form>

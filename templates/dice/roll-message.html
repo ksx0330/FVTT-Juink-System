@@ -1,0 +1,106 @@
+<div class="juin-roll-message" data-title="{{title}}">
+    <h2><b>{{title}}</b></h2>
+    {{{content}}}
+    
+    <div class="dice-roll">
+        <div class="dice-result">
+            <div class="dice-formula">{{roll.formula}}</div>
+
+            <div class="dice-tooltip-always-open">
+                {{#each parts}}
+                <section class="tooltip-part">
+                    <div class="dice">
+                        <header class="part-header flexrow">
+                            <span class="part-formula">{{this.formula}}</span>
+                            {{#if this.flavor}}<span class="part-flavor">{{this.flavor}}</span>{{/if}}
+                            <span class="part-total">{{this.total}}</span>
+                            {{#if ../canInfluence}}
+                            <a class="influence">
+                                <i class="fas fa-yin-yang" style="font-size: 20px"></i>
+                            </a>
+                            {{/if}}
+                        </header>
+                        <ol class="dice-rolls">
+                        {{#each this.rolls}}
+                            <li class="roll {{this.classes}}">{{{this.result}}}</li>
+                        {{/each}}
+                        </ol>
+                    </div>
+                </section>
+                {{/each}}
+            </div>
+            
+            {{#if showList}}
+            <button class="title toggle-btn actived-effect-btn" data-style="actived-effect">{{localize "Juink.UseLog"}}</button>
+            <div class="actived-effect" style="display: none; margin-bottom: 4px;">
+                <button class="title toggle-btn" data-style="event-item-list">{{localize "TYPES.Item.event"}}</button>
+                <div class="item-list event-item-list" style="display: none;">
+                    {{#each eventList as |item id|}}
+                    <div class="item">
+                        <div class="flex toggle-btn" data-style="item-description">
+                            <img src="{{item.img}}"/>
+                            <label class="name item-label">
+                                {{item.name}}
+                            </label>
+                        </div>
+                        <div class="item-description">
+                            {{{item.system.description}}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                
+                <button class="title toggle-btn" data-style="item-item-list">{{localize "TYPES.Item.item"}}</button>
+                <div class="item-list item-item-list" style="display: none;">
+                    {{#each itemList as |item id|}}
+                    <div class="item">
+                        <div class="flex toggle-btn" data-style="item-description">
+                            <img src="{{item.img}}"/>
+                            <label class="name item-label">
+                                {{item.name}}
+                            </label>
+                        </div>
+                        <div class="item-description">
+                            {{{item.system.description}}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            
+                <button class="title toggle-btn" data-style="ability-item-list">{{localize "TYPES.Item.ability"}}</button>
+                <div class="item-list ability-item-list"style="display: none;">
+                    {{#each abilityList as |item id|}}
+                    <div class="item">
+                        <div class="flex toggle-btn" data-style="item-description">
+                            <img src="{{item.img}}"/>
+                            <label class="name item-label">
+                                {{item.name}}<br>
+                                <span style="color : gray; font-size : smaller;"> 
+                                    {{localize "Juink.Scene"}} : {{item.system.timing}} | 
+                                    {{localize "Juink.Cost"}} : {{abilityCost item}} |
+                                    {{localize "Juink.Target"}} : {{item.system.target}} |
+                                    {{localize "Juink.Limit"}} : {{abilityLimit item.system.used.limit}}                                   
+                                </span>
+                            </label>
+                        </div>
+                        <div class="item-description">
+                            {{{item.system.description}}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+
+            <button class="title use-effect-btn">{{localize "Juink.UseAdditionalEffect"}}</button>
+
+            <h4 class="dice-total">{{roll.total}}</h4>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>

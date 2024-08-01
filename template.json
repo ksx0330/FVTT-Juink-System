@@ -1,0 +1,159 @@
+{
+"Actor": {
+    "types": ["character", "scenario"],
+    "character": {
+        "life": {
+            "add": 0,
+            "value": 0,
+            "min": 0,
+            "max": 10,
+
+            "mad": {
+                "0": false,
+                "1": false,
+                "2": false
+            }
+        },
+        "hope": { "value": 0 },
+        "juin": { "value": 0 },
+
+        "attributes": {
+            "str": { "add": 0 },
+            "agi": { "add": 0 },
+            "int": { "add": 0 },
+            "wil": { "add": 0 },
+            "lck": { "add": 0 },
+
+            "dice": {
+                "open": false,
+                "pool": 0,
+                "select": "-"
+            }
+        },
+
+        "event": {},
+        "itemUsage": false,
+
+        "address": {
+            "favorite": {
+                "name": "",
+                "img": "icons/svg/mystery-man.svg",
+                "state": false
+            },
+            "list": {}
+        },
+
+        "details": {
+            "backgroundImg": "systems/juink/assets/default_background.png",
+            "age": "",
+            "gender": "",
+            "native": "",
+            "appear": "",
+            "wish": "",
+            "biography": "",
+            "diary": ""
+        }
+
+    },
+    "scenario": {
+        "player": "",
+        "juin": "",
+        "dice": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+        },
+        "description": ""
+    }
+},
+"Item": {
+    "types": ["job", "ability", "item", "event", "identity"],
+    "job": {
+        "economicP": "",
+        "life": "",
+        "hope": "",
+
+        "items": {},
+        "attributes": {
+            "str": { "value": "" },
+            "agi": { "value": "" },
+            "int": { "value": "" },
+            "wil": { "value": "" },
+            "lck": { "value": "" }
+        },
+
+        "description": ""
+    },
+    "ability": {
+        "link": false,
+        "timing": "",
+        "cost": {
+            "normal": {
+                "type": "-",
+                "value": ""
+            },
+            "linked": {
+                "type": "-",
+                "value": ""
+            }
+        },
+        "target": "",
+        "used": {
+            "limit": "",
+            "state": false
+        },
+
+        "description": "",
+        "effect": {
+            "timing": "-",
+            "type": "-",
+            "macro": "",
+            "value": ""
+        }
+    },
+    "item": {
+        "quantity": {
+            "value": 0,
+            "max": ""
+        },
+        "require": "",
+        "description": "",
+        "effect": {
+            "timing": "-",
+            "type": "-",
+            "macro": "",
+            "value": ""
+        }
+    },
+    "event": {
+        "select": false,
+        "life": {
+            "value": 0,
+            "min": 0,
+            "origin": "",
+            "max": "",
+            "add": true
+        },
+        "description": "",
+        "effect": {
+            "timing": "-",
+            "type": "-",
+            "macro": "",
+            "value": ""
+        }
+    },
+    "identity": {
+        "obtain": false,
+        "visible": false,
+        "timing": "",
+        "cost": "",
+        "target": "",
+        "limit": "",
+        
+        "description": ""
+    }
+
+
+}
+}

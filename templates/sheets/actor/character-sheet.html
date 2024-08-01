@@ -1,0 +1,320 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <button style="display: none;">Input Button Click bypass</button>
+
+    <img class="background-img" src="{{system.details.backgroundImg}}"/>
+    <img class="background-img blur">
+    <img class="background-img-changer" src="systems/juink/assets/camera-solid.svg"/>
+    <img class="background-img-changer" style="filter: opacity(0);" src="{{system.details.backgroundImg}}" data-edit="system.details.backgroundImg"/>
+    <div class="phone-base"></div>
+
+    <section class="phone-content">
+        <section class="main-screen">
+
+            <nav class="tabs" data-group="primary-tabs">
+                <a class="home-nav" data-tab="initial" data-group="primary-tabs">Initial</a>
+                <a class="profile-nav" data-tab="profile" data-group="primary-tabs">profile</a>
+                <a class="attributes-nav" data-tab="attributes" data-group="primary-tabs">profile</a>
+                <a class="bags-nav" data-tab="bags" data-group="primary-tabs">bags</a>
+                <a class="address-nav" data-tab="address" data-group="primary-tabs">address</a>
+                <a class="diary-nav" data-tab="diary" data-group="primary-tabs">diary</a>
+            </nav>
+
+
+            <section class="default-screen"  style="{{#if system.attributes.dice.open}} height: 70%; {{else}} height: 95%; {{/if}}">
+                <section class="changable-screen init-screen tab" data-tab="initial" data-group="primary-tabs">
+                    <img class="profile-img move-tab" data-tab="profile" src="{{actor.img}}" title="{{actor.name}}"/>
+                    <div class="label">
+                        <div class="title">{{actor.name}}</div>
+                    </div>
+
+                    <div class="juin">
+                        <img src="systems/juink/assets/juin.png"/>
+                        <div class="title flex">
+                            <input type="text" name="system.juin.value" value="{{system.juin.value}}" placeholder="{{localize "Juink.Juin"}}" data-dtype="Number"/>
+                            <span>{{localize "Juink.JuinNum"}}</span>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="changable-screen profile-screen tab" data-tab="profile" data-group="primary-tabs">
+                    <input class="title" name="name" type="text" value="{{actor.name}}" >
+                    <div class="flex">
+                        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+                        <div class="nameplate">
+                            <div class="detail-info flex">
+                                <span class="sub-title">{{localize "Juink.Age"}}</span>
+                                <input type="text" name="system.detail.age" value="{{system.detail.age}}" data-dtype="String"/>
+        
+                                <span class="sub-title">{{localize "Juink.Gender"}}</span>
+                                <input type="text" name="system.detail.gender" value="{{system.detail.gender}}" data-dtype="String"/>
+                            </div>
+        
+                            <div class="detail-info flex">
+                                <span class="sub-title">{{localize "Juink.Native"}}</span>
+                                <input type="text" class="long-input" name="system.detail.native" value="{{system.detail.native}}" data-dtype="String"/>
+                            </div>
+        
+                            <div class="detail-info flex">
+                                <span class="sub-title">{{localize "Juink.Appear"}}</span>
+                                <input type="text" class="long-input" name="system.detail.appear" value="{{system.detail.appear}}" data-dtype="String"/>
+                            </div>
+
+                            <div class="detail-info flex">
+                                <span class="sub-title">{{localize "Juink.Wish"}}</span>
+                                <input type="text" class="long-input" name="system.detail.wish" value="{{system.detail.wish}}" data-dtype="String"/>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="memo">
+                        <label class="title">{{localize "Juink.Memo"}}</label>
+                        {{editor enrichedBiography target="system.details.biography" button=true editable=editable }}
+                    </div>
+                    
+                </section>
+    
+    
+                <section class="changable-screen attributes-screen tab" data-tab="attributes" data-group="primary-tabs">
+                    <div class="job-card">
+                        <div class="title flex">
+                            <label class="label">{{localize "TYPES.Item.job"}}</label>
+                            <a class="name show-job">{{system.job.name}}</a>
+                            <button class="delete-job">{{localize "Juink.Delete"}}</button>
+                        </div>
+                        <div class="job-content">
+                            {{{system.job.system.description}}}
+                        </div>
+                        <div class="job-data flex">
+                            <div class="title">{{localize "Juink.EconomicPower"}}</div>
+                            <div class="content">{{system.job.system.economicP}}</div>
+
+                            <div class="title">{{localize "Juink.Life"}}</div>
+                            <div class="content">{{system.job.system.life}}</div>
+                            
+                            <div class="title">{{localize "Juink.Hope"}}</div>
+                            <div class="content">{{system.job.system.hope}}</div>
+                        </div>
+                    </div>
+
+                    <div class="attributes">
+                        <div class="attr">
+                            <div class="title">{{localize "Juink.Str"}}</div>
+                            <input class="add" name="system.attributes.str.add" value="{{system.attributes.str.add}}" placeholder="0" data-dtype="Number">
+                            <div class="content">{{system.attributes.str.value}}</div>
+                        </div>
+
+                        <div class="attr">
+                            <div class="title">{{localize "Juink.Agi"}}</div>
+                            <input class="add" name="system.attributes.agi.add" value="{{system.attributes.agi.add}}" placeholder="0" data-dtype="Number">
+                            <div class="content">{{system.attributes.agi.value}}</div>
+                        </div>
+
+                        <div class="attr">
+                            <div class="title">{{localize "Juink.Int"}}</div>
+                            <input class="add" name="system.attributes.int.add" value="{{system.attributes.int.add}}" placeholder="0" data-dtype="Number">
+                            <div class="content">{{system.attributes.int.value}}</div>
+                        </div>
+
+                        <div class="attr">
+                            <div class="title">{{localize "Juink.Wil"}}</div>
+                            <input class="add" name="system.attributes.wil.add" value="{{system.attributes.wil.add}}" placeholder="0" data-dtype="Number">
+                            <div class="content">{{system.attributes.wil.value}}</div>
+                        </div>
+
+                        <div class="attr">
+                            <div class="title">{{localize "Juink.Lck"}}</div>
+                            <input class="add" name="system.attributes.lck.add" value="{{system.attributes.lck.add}}" placeholder="0" data-dtype="Number">
+                            <div class="content">{{system.attributes.lck.value}}</div>
+                        </div>
+
+                        <div class="attr">
+                            <div class="title">{{localize "Juink.Life"}}</div>
+                            <input class="add" name="system.life.add" value="{{system.life.add}}" placeholder="0" data-dtype="Number">
+                            <div class="content">{{system.life.max}}</div>
+                        </div>
+
+                    </div>
+
+                </section>
+    
+                <section class="changable-screen bags-screen tab" data-tab="bags" data-group="primary-tabs">
+
+                    <div class="item-bag">
+                        {{#each actor.itemList as |item id|}}
+                        <div class="item" data-item-id="{{item._id}}">
+                            <label class="name use-item">{{item.name}}</label>
+                            <img class="show-item" src="{{item.img}}">
+                            <div class="item-control">
+                                <button type="button" class="icon-button add-item" data-add="-1">-</button>
+                                <span>{{item.system.quantity.value}}</span>
+                                <button type="button" class="icon-button add-item" data-add="1">+</button>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                </section>
+
+                <section class="changable-screen address-screen tab" data-tab="address" data-group="primary-tabs">
+
+                    <div class="address-list">
+                        <div class="title">{{localize "Juink.Address"}}
+                            <button class="add-address">+</button>
+                        </div>
+
+                        <div class="favorite address">
+                            <img src="{{system.address.favorite.img}}" data-edit="system.address.favorite.img"/>
+                            <input class="name" type="text" name="system.address.favorite.name" value="{{system.address.favorite.name}}" placeholder="{{localize "Juink.Favorite"}}" >
+                            <input class="state" type="checkbox" name="system.address.favorite.state" {{#if system.address.favorite.state}} checked {{/if}}>
+                        </div>
+
+                        {{#each system.address.list as |data id|}}
+                        <div class="address">
+                            <img src="{{data.img}}" data-edit="system.address.list.{{id}}.img"/>
+                            <input class="name" type="text" name="system.address.list.{{id}}.name" value="{{data.name}}" placeholder="{{localize "Juink.Name"}}" >
+                            <input class="name feeling" type="text" name="system.address.list.{{id}}.feel" value="{{data.feel}}">
+                            <button class="delete-address" data-id="{{id}}"><i class="fas fa-trash"></i></button>
+                        </div>
+                        {{/each}}
+                    </div>
+
+
+                </section>
+
+                <section class="changable-screen diary-screen tab" data-tab="diary" data-group="primary-tabs">
+                    <nav class="diary-tabs" data-group="diary-tabs">
+                        <a class="item" data-tab="ability" data-group="diary-tabs">{{localize "TYPES.Item.ability"}}</a>
+                        <a class="item" data-tab="memo" data-group="diary-tabs">{{localize "Juink.Diary"}}</a>
+                    </nav>
+
+                    <section class="ability tab" data-tab="ability" data-group="diary-tabs">
+                        {{#each actor.abilityList as |item id|}}
+                        <div class="item flex {{#if item.system.used.state}} disabled {{/if}}" data-item-id="{{item._id}}">
+                            <img class="show-item" src="{{item.img}}"/>
+                            <label class="name use-item">
+                                {{item.name}}<br>
+                                <span style="color : gray; font-size : smaller;"> 
+                                    {{localize "Juink.Scene"}} : {{item.system.timing}} | 
+                                    {{localize "Juink.Cost"}} : {{abilityCost item}} |<br>
+                                    {{localize "Juink.Target"}} : {{item.system.target}} |
+                                    {{localize "Juink.Limit"}} : {{abilityLimit item.system.used.limit}}                                   
+                                </span>
+                            </label>
+                            <input class="ability-link" type="checkbox" {{#if item.system.link}} checked {{/if}}>
+                        </div>
+                        {{/each}}
+
+                    </section>
+
+                    <section class="diary tab" data-tab="memo" data-group="diary-tabs">
+                        <div class="title">{{localize "Juink.Record"}}</div>
+                        {{editor enrichedDiary target="system.details.diary" button=true editable=editable }}
+                    </section>
+
+                </section>
+    
+    
+                <div class="basic-status">
+                    <div class="life-title">{{localize "Juink.Life"}}</div>
+                    <div class="hope-title">{{localize "Juink.Hope"}}</div>
+                    <div class="life-bar" style="{{life system.life.value system.life.max}}">
+                        <div class="hope">
+                            <a class="add-hope" data-add="-1"> - </a>
+                            <input type="text" name="system.hope.value" value="{{system.hope.value}}" data-dtype="Number"/>
+                            <a  class="add-hope" data-add="+1"> + </a>
+                        </div>
+
+                        <div class="life">
+                            <a class="add-life" data-add="-1"> - </a>
+                            <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/>
+                            <span> / </span>
+                            <input type="text" name="system.life.max" value="{{system.life.max}}" data-dtype="Number"/>
+                            <a  class="add-life" data-add="+1"> + </a>
+                        </div>
+                    </div>
+
+                    <div class="mad">
+                        <span class="mad-title">{{localize "Juink.Mad"}}</span>
+                        <div class="mad-box">
+                            <input type="checkbox" name="system.life.mad.0" {{#if system.life.mad.[0]}} checked {{/if}} />
+                            <input type="checkbox" name="system.life.mad.1" {{#if system.life.mad.[1]}} checked {{/if}} />
+                            <input type="checkbox" name="system.life.mad.2" {{#if system.life.mad.[2]}} checked {{/if}} />
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="app-box">
+                    <div class="application move-tab" data-tab="attributes">
+                        <div class="app-icon">
+                            <img src="systems/juink/assets/profile.png" width="40">
+                        </div>
+                        <label>{{localize "Juink.Attributes"}}</label>
+                    </div>
+    
+                    <div class="application move-tab item-usage-check" data-tab="bags">
+                        <div class="app-icon">
+                            {{#if system.itemUsage}}
+                            <img src="systems/juink/assets/ban.png" width="40">
+                            {{else}}
+                            <img src="systems/juink/assets/bag.png" width="40">
+                            {{/if}}
+                        </div>
+                        <label>{{localize "Juink.Bags"}}</label>
+                    </div>
+    
+                    <div class="application move-tab" data-tab="address">
+                        <div class="app-icon">
+                            <img src="systems/juink/assets/address.png" width="40">
+                        </div>
+                        <label>{{localize "Juink.Address"}}</label>
+                    </div>
+    
+                    <div class="application move-tab" data-tab="diary">
+                        <div class="app-icon">
+                            <img src="systems/juink/assets/diary.png" width="40">
+                        </div>
+                        <label>{{localize "Juink.Diary"}}</label>
+                    </div>
+                </div>
+    
+            </section>
+    
+            <section class="roll-screen" style="{{#if system.attributes.dice.open}} height: 25%; {{else}} height: 0; {{/if}}">
+                <div class="roll-box">
+                    <div class="title-bar flex">
+                        <div class="title">{{localize "Juink.RollDice"}}</div>
+                        <select class="update-pool" name="system.attributes.dice.select" data-dtype="String">
+                            {{#select system.attributes.dice.select}}
+                            <option value="-">-</option>
+                            <option value="str">{{localize "Juink.Str"}}</option>
+                            <option value="agi">{{localize "Juink.Agi"}}</option>
+                            <option value="int">{{localize "Juink.Int"}}</option>
+                            <option value="wil">{{localize "Juink.Wil"}}</option>
+                            <option value="lck">{{localize "Juink.Lck"}}</option>
+                            {{/select}}
+                        </select>
+                        <button class="add-dice">{{localize "Juink.AddRollDice"}}</button>
+                    </div>
+    
+                    <div class="dice-pool">
+                        {{#times system.attributes.dice.pool}}
+                        <img class="dice unchecked" src="systems/juink/assets/dice.png" width="35" height="35">
+                        {{/times}}
+                    </div>
+                </div>
+    
+                <div class="button-box flex">
+                    <button class="roll-calculate">{{localize "Juink.Calculate"}}</button>
+                    <button class="roll-decrease">{{localize "Juink.Decrease"}}</button>
+                </div>
+    
+            </section>
+    
+        </section>
+        <div class="home-button">
+            <a class="move-tab" data-tab="initial"><i class="fas fa-home"></i></a>
+        </div>
+    </section>
+    
+</form>

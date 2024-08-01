@@ -1,0 +1,176 @@
+<div class="dialog-content">
+    {{#if isUse}}
+    {{else}}
+    <hr>
+    <div class="add-dice-hint">{{localize "Juink.AddDiceHint"}}</div>
+    <hr>
+    {{/if}}
+
+    <div class="item-list event">
+        <div class="title">{{localize "TYPES.Item.event"}}</div>
+        {{#each eventList as |item id|}}
+        <div class="item" data-item-id="{{item._id}}" data-item-list="eventList">
+            <div class="flex">
+                <img class="show-item" src="{{item.img}}"/>
+                <label class="name item-label">
+                    {{item.name}}
+                </label>
+                {{#if ../isUse}}
+                <button class="use-item">{{localize "Juink.Use"}}</button>
+                {{else}}
+                <input class="use-check" type="checkbox">
+                {{/if}}
+            </div>
+            <div class="item-description">
+                {{{item.system.description}}}
+            </div>
+        </div>
+        {{/each}}
+
+
+    </div>
+    <hr>
+    <div class="item-list event">
+        <div class="title">{{localize "TYPES.Item.item"}}</div>
+        {{#each itemList as |item id|}}
+        <div class="item" data-item-id="{{item._id}}" data-item-list="itemList">
+            <div class="flex">
+                <img class="show-item" src="{{item.img}}"/>
+                <label class="name item-label">
+                    {{item.name}} [{{item.system.quantity.value}} / {{item.system.quantity.max}}]
+                </label>
+                {{#if ../isUse}}
+                <button class="use-item">{{localize "Juink.Use"}}</button>
+                {{else}}
+                <input class="use-check" type="checkbox">
+                {{/if}}
+            </div>
+            <div class="item-description">
+                {{{item.system.description}}}
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+    <hr>
+    <div class="item-list ability">
+        <div class="title">{{localize "TYPES.Item.ability"}}</div>
+        {{#each abilityList as |item id|}}
+        <div class="item {{#if item.system.used.state}} disabled {{/if}}" data-item-id="{{item._id}}" data-item-list="abilityList">
+            <div class="flex">
+                <img class="show-item" src="{{item.img}}"/>
+                <label class="name item-label">
+                    {{item.name}}<br>
+                    <span style="color : gray; font-size : smaller;"> 
+                        {{localize "Juink.Scene"}} : {{item.system.timing}} | 
+                        {{localize "Juink.Cost"}} : {{abilityCost item}} | <br>
+                        {{localize "Juink.Target"}} : {{item.system.target}} |
+                        {{localize "Juink.Limit"}} : {{abilityLimit item.system.used.limit}}                                   
+                    </span>
+                </label>
+                {{#if ../isUse}}
+                <button class="use-item">{{localize "Juink.Use"}}</button>
+                {{else}}
+                <input class="use-check" type="checkbox">
+                {{/if}}
+            </div>
+            <div class="item-description">
+                {{{item.system.description}}}
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+    <hr>
+
+    {{#if isHope}}
+    <div class="input-bar">
+        {{localize "Juink.Hope"}}
+        <div class="flex">
+            <a class="add-hope" data-add="-1">-</a>
+            <input type="number" class="hope-usage" placeholder="0">  
+            <a class="add-hope" data-add="+1">+</a>
+            {{#if isUse}}
+            <button class="use-action use-hope-action">{{localize "Juink.Use"}}</button>
+            {{/if}}
+        </div>
+    </div>
+    <hr>
+    {{/if}}
+
+
+    {{#if isUse}}
+    <div class="input-bar">
+        {{localize "Juink.AddDice"}}
+        <div class="flex">
+            <input type="number" class="add-dice" placeholder="0">
+            <span>D 6 + </span> 
+            <input type="number" class="add-value" placeholder="0">
+            <span></span>
+            <span></span>
+
+            <button class="use-action add-dice-action">{{localize "Juink.Use"}}</button>
+        </div>
+    </div>
+    <hr>
+
+    <div class="input-bar">
+        {{localize "Juink.ChangeDice"}}
+        <div class="flex">
+            <span>A</span> 
+            <input type="number" class="from-value" placeholder="0">
+            <span></span>
+            <span>B</span> 
+            <input type="number" class="to-value" placeholder="0">
+            <span></span>
+            <span></span>
+
+            <button class="use-action change-dice-action">{{localize "Juink.Use"}}</button>
+        </div>
+    </div>
+    <hr>
+
+    <div class="input-bar">
+        {{localize "Juink.reRollDice"}}
+        <a class="add-input" data-add="+1">+</a>
+        <div class="flex reroll-inputs">
+            <input type="number" class="reroll-value" placeholder="0">
+            <span></span>
+            <span></span>
+
+            <button class="use-action re-roll-action">{{localize "Juink.Use"}}</button>
+        </div>
+    </div>
+    <hr>
+
+
+
+    {{else}}
+    <div class="additioanl">
+        <div class="title">{{localize "Juink.Sum"}}</div>
+        <div class="flex">
+            <span>( {{baseDice}} + </span>
+            <input type="text" class="actived" value="0" readonly>
+            <span>+</span>
+            <input type="text" class="add-dice" placeholder="0">
+            <span>) D6</span>
+
+            {{#ifEquals usage "dice"}}
+            {{else}}
+            <span>+</span>
+            <input type="text" class="add-value" placeholder="0">
+            {{/ifEquals}}
+        </div>
+    </div>
+    {{/if}}
+
+
+</div>
+<div class="dialog-buttons">
+    {{#each buttons as |button id|}}
+    <button class="dialog-button {{cssClass}}" data-button="{{id}}" {{disabled button.disabled}}>
+        {{{button.icon}}}
+        {{{button.label}}}
+    </button>
+    {{/each}}
+</div>

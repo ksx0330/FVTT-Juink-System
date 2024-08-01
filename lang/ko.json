@@ -1,0 +1,115 @@
+{
+    "Juink.Life": "명운",
+    "Juink.Hope": "희망",
+    "Juink.EconomicPower": "경제력",
+    "Juink.Str": "체력",
+    "Juink.Agi": "민첩",
+    "Juink.Int": "지성",
+    "Juink.Wil": "정신",
+    "Juink.Lck": "행운",
+    
+    "Juink.Quantity": "개수",
+    "Juink.Effect": "효과",
+    "Juink.Apply": "적용",
+    "Juink.Use": "사용",
+    "Juink.Reset": "초기화",
+    "Juink.Delete": "삭제",
+
+    "Juink.Age": "연령",
+    "Juink.Gender": "성별",
+    "Juink.Native": "출신",
+    "Juink.Appear": "외모",
+    "Juink.Wish": "소원",
+
+    "Juink.Bags": "소지품",
+    "Juink.Attributes": "능력치",
+    "Juink.Address": "연락처",
+    "Juink.Diary": "일기",
+    "Juink.Record": "기록",
+
+    "Juink.Favorite": "소중한 사람",
+    "Juink.Name": "이름",
+    "Juink.Memo": "메모",
+
+    "Juink.FateDices": "숙명 주사위",
+    "Juink.Juin": "주인",
+    "Juink.JuinNum": "획",
+    "Juink.PC": "PC",
+    "Juink.PCNum": "인",
+    "Juink.Mad": "광기",
+
+    "Juink.Link": "관계성",
+    "Juink.Scene": "장면",
+    "Juink.Cost": "비용",
+    "Juink.Target": "대상",
+    "Juink.Limit": "제한",
+    "Juink.None": "없음",
+    "Juink.Phase": "페이즈",
+    "Juink.Scenario": "시나리오",
+    "Juink.JuinMultiNumber": "+ [주인] x 인원수",
+    "Juink.Visibility": "공개",
+    "Juink.Obtain": "취득",
+
+    "Juink.DefaultAbilityName": "복선",
+    "Juink.DefaultAbilityTiming": "임의",
+    "Juink.DefaultAbilityTarget": "사용자",
+    "Juink.DefaultAbilityDesc": "대상은 [판정다이스] + 4d를 한 뒤, 같은 [씬]에서 《과거와 비밀》을 1개 사용할 수 있다.",
+
+    "Juink.RollDice": "판정 주사위",
+    "Juink.AddRollDice": "주사위 추가",
+    "Juink.Sum": "합계",
+    
+    "Juink.UseAdditionalEffect": "추가 효과 사용",
+    "Juink.Calculate": "효과산출",
+    "Juink.Decrease": "효과경감",
+    "Juink.AddLife": "명운 추가",
+    "Juink.AddHope": "희망 추가",
+    "Juink.AddDice": "주사위 추가",
+    "Juink.ChangeDice": "A눈을 B로 변경",
+    "Juink.reRollDice": "주사위 눈을 재굴림",
+    "Juink.RunMacro": "매크로 실행",
+    "Juink.TypeMacro": "매크로 이름 입력",
+
+    "Juink.inputNumberGuide": "ex) 1",
+    "Juink.inputMultiNumberGuide": "ex) 1 2",
+    "Juink.inputDiceGuide": "ex) 1d6",
+    "Juink.ChangeDiceGuide": "ex) [1 6]",
+
+    "Juink.EndPhase": "페이즈 종료",
+    "Juink.EndScenario": "시나리오 종료",
+    
+
+    "Juink.UseHope": "희망을 사용해 명운을 상승시키겠습니까?",
+    "Juink.UseQuestion": "을(를) 사용하시겠습니까?",
+    "Juink.UseConfirm": "을(를) 사용했습니다.",
+    "Juink.UseFateDice": "숙명 주사위 사용",
+    "Juink.AfterUseFateDice": "을(를) 사용했습니다.",
+    "Juink.ChangeFateDice": "숙명 주사위 변경",
+    "Juink.AfterChangeFateDice": "로 변경했습니다.",
+    "Juink.ChargeFateDice": "숙명 주사위 충전",
+    "Juink.PurgeFateDice": "숙명 주사위 초기화",
+    
+    "Juink.UseLog": "사용 내역",
+
+    "Juink.Influence": "숙명 간섭",
+    "Juink.InfluenceDialog": "어느 눈과 교환하시겠습니까?",
+    "Juink.ActionDice": "판정 주사위",
+
+    "Juink.Error.AlreadyJob": "이미 직업이 설정되어 있습니다.",
+    "Juink.Error.NotUseItem": "아이템을 사용할 수 없습니다.",
+    "Juink.Error.NotSupportItem": "지원하지 않는 아이템입니다.",
+    "Juink.Error.NotSettedActor": "효과를 사용할 액터가 설정되지 않았습니다.",
+    "Juink.Error.AlreadyUseItem": "이번 페이즈에 이미 아이템을 사용했습니다.",
+
+    "Juink.ScenarioHint": "장면에 시나리오 액터를 연결해서 시나리오의 이벤트와 숙명 주사위를 연동할 수 있습니다.",
+    "Juink.AddDiceHint": "주사위 추가 효과만 적용됩니다.",
+
+    "TYPES.Actor.character": "캐릭터",
+    "TYPES.Actor.scenario": "시나리오",
+
+    "TYPES.Item.job": "직업",
+    "TYPES.Item.ability": "과거와 비밀",
+    "TYPES.Item.item": "아이템",
+    "TYPES.Item.event": "이벤트",
+    "TYPES.Item.identity": "정체"
+}

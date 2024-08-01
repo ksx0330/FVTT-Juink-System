@@ -1,0 +1,79 @@
+{
+  
+  "id": "juink",
+  "title": "주인감염(呪印感染)",
+  "description": "주인감염(呪印感染)",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.315"
+  },
+  "authors": [
+    {
+      "name": "ltaeng",
+      "email": "ksx0330@gmail.com",
+      "discord": "ltaeng",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "module/init.js"
+  ],
+  "styles": [
+    "styles/style.css"
+  ],
+  "languages": [
+    {
+      "lang": "ko",
+      "name": "한국어",
+      "path": "lang/ko.json",
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "label": "아이템",
+      "type": "Item",
+      "name": "defalt-items",
+      "path": "packs/defalt-items",
+      "system": "juink",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "샘플 캐릭터",
+      "type": "Actor",
+      "name": "sample-character-kr",
+      "path": "packs/sample-character-kr",
+      "system": "juink",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "굴림표",
+      "type": "RollTable",
+      "name": "default-rolltable-kr",
+      "path": "packs/default-rolltable-kr",
+      "system": "juink",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "socket": true,
+  "primaryTokenAttribute": "life",
+  "url": "https://github.com/ksx0330/FVTT-Juink-System",
+  "manifest": "https://raw.githubusercontent.com/ksx0330/FVTT-Juink-System/master/system.json",
+  "download": "https://codeload.github.com/ksx0330/FVTT-Juink-System/zip/master",
+  "license": "LICENSE.txt"
+}

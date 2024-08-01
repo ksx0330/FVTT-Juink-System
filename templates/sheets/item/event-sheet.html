@@ -1,0 +1,87 @@
+<form class="{{cssClass}} event" autocomplete="off">
+    <button style="display: none;">Input Button Click bypass</button>
+    <section class="item-header flex">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="item-status">
+            <div class="title-bar">
+                <input class="title" name="name" type="text" value="{{item.name}}" >
+                <input type="checkbox" class="inner-check" name="system.select" {{#if system.select}} checked {{/if}}>
+            </div>
+            <div class="data-row flex">
+                <span class="title flex-2">{{localize "Juink.Life"}}</span>
+                <input type="text" class="flex-1" name="system.life.origin" value="{{system.life.origin}}" data-dtype="Number">
+
+                <span class="title long-title">{{localize "Juink.JuinMultiNumber"}}&ensp;&ensp;</span>
+                <input type="checkbox" class="inner-check" name="system.life.add" {{#if system.life.add}} checked {{/if}}>
+            </div>
+
+            <div class="life-bar" style="{{life system.life.value system.life.max}}">
+                <div class="life">
+                    <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/>
+                    <span> / </span>
+                    <input type="text" value="{{system.life.max}}" data-dtype="Number" readonly/>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    {{editor enrichedBiography target="system.description" button=true editable=editable }}
+
+    <section class="item-footer">
+
+        <div class="title">{{localize "Juink.Effect"}}</div>
+        <div class="flex">
+            <select name="system.effect.timing" data-dtype="String">
+                {{#select system.effect.timing}}
+                <option value="-">-</option>
+                <option value="calculate">{{localize "Juink.Calculate"}}</option>
+                <option value="decrease">{{localize "Juink.Decrease"}}</option>
+                <option value="dice">{{localize "Juink.RollDice"}}</option>
+                {{/select}}
+            </select>
+    
+            <select name="system.effect.type" data-dtype="String">
+                {{#select system.effect.type}}
+                <option value="-">-</option>
+                <option value="addDice">{{localize "Juink.AddDice"}}</option>
+                <option value="changeDice">{{localize "Juink.ChangeDice"}}</option>
+                <option value="reRollDice">{{localize "Juink.reRollDice"}}</option>
+                <option value="runMacro">{{localize "Juink.RunMacro"}}</option>
+                {{/select}}
+            </select>
+    
+            <input class="effect-value" name="system.effect.value" type="text" value="{{system.effect.value}}" 
+            {{#ifEquals system.effect.type "changeDice"}}
+                placeholder="{{localize "Juink.ChangeDiceGuide"}}"
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "addLife"}}
+                placeholder="{{localize "Juink.inputDiceGuide"}}"
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "reRollDice"}}
+                placeholder="{{localize "Juink.inputMultiNumberGuide"}}"
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "-"}}
+                placeholder=""
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "runMacro"}}
+                placeholder=""
+            {{else}}
+                placeholder="{{localize "Juink.inputNumberGuide"}}"
+            {{/ifEquals}}
+            >
+        </div>
+
+        {{#ifEquals system.effect.type "runMacro"}}
+        <div class="macro-checked">
+            <input name="system.effect.macro" type="text" value="{{system.effect.macro}}" placeholder="{{localize "Juink.TypeMacro"}}" >
+        </div>
+        {{/ifEquals}}
+    </section>
+
+
+</form>

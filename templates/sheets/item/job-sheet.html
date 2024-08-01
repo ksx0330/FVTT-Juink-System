@@ -1,0 +1,37 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <button style="display: none;">Input Button Click bypass</button>
+    <section class="job-card flex">
+        <section class="desc-section">
+            <input class="title" name="name" type="text" value="{{item.name}}" >
+            {{editor enrichedBiography target="system.description" button=true editable=editable }}
+        </section>
+        <section class="data-section">
+            <div class="flex">
+                <span class="title">{{localize "Juink.EconomicPower"}}</span>
+                <div>
+                    <input type="number" name="system.economicP" value="{{system.economicP}}" data-dtype="Number"/>
+                </div>
+            </div>
+            <div class="flex">
+                <span class="title">{{localize "Juink.Life"}}</span>
+                <div>
+                    <input type="number" name="system.life" value="{{system.life}}" data-dtype="Number"/>
+                </div>
+            </div>
+            <div class="flex">
+                <span class="title">{{localize "Juink.Hope"}}</span>
+                <div>
+                    <input type="number" name="system.hope" value="{{system.hope}}" data-dtype="Number"/>
+                </div>
+            </div>
+
+            <button class="set-items">{{localize "TYPES.Item.item"}}</button>
+            <button class="set-attributes">{{localize "Juink.Attributes"}}</button>
+        </section>
+
+
+    </section>
+
+
+
+</form>

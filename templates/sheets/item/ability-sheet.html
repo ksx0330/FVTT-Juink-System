@@ -1,0 +1,130 @@
+<form class="{{cssClass}} ability" autocomplete="off">
+    <button style="display: none;">Input Button Click bypass</button>
+    <section class="item-header">
+        <div class="title-bar">
+            {{#haveActor item}}
+            <button class="float-left delete-item"><i class="fas fa-trash"></i></button>
+            {{/haveActor}}
+            <input class="title" name="name" type="text" value="{{item.name}}" >
+            <input class="float-right" name="system.used.state" type="checkbox" {{#if system.used.state}} checked {{/if}}" >
+        </div>
+    </section>
+
+
+    <section class="item-header flex">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="data-box">
+            <div class="data-row flex">
+                <span class="title">{{localize "Juink.Scene"}}</span>
+                <input type="text" name="system.timing" value="{{system.timing}}"/>
+                <span class="title inner-check">
+                    {{localize "Juink.Link"}} &ensp;
+                    <input class="float-right" name="system.link" type="checkbox" {{#if system.link}} checked {{/if}}" >
+                </span>
+            </div>
+            
+            <div class="data-row flex">
+                <span class="title">{{localize "Juink.Cost"}}</span>
+                <div class="slash-input">
+                    <select class="select-type" name="system.cost.normal.type" data-dtype="String">
+                        {{#select system.cost.normal.type}}
+                        <option value="-">{{localize "Juink.None"}}</option>
+                        <option value="hope">{{localize "Juink.Hope"}}</option>
+                        <option value="life">{{localize "Juink.Life"}}</option>
+                        {{/select}}
+                    </select>
+                    <input type="text" name="system.cost.normal.value" value="{{system.cost.normal.value}}"/>
+                    <span> / </span>
+                    <select class="select-type" name="system.cost.linked.type" data-dtype="String">
+                        {{#select system.cost.linked.type}}
+                        <option value="-">{{localize "Juink.None"}}</option>
+                        <option value="hope">{{localize "Juink.Hope"}}</option>
+                        <option value="life">{{localize "Juink.Life"}}</option>
+                        {{/select}}
+                    </select>
+                    <input type="text" name="system.cost.linked.value" value="{{system.cost.linked.value}}"/>
+                </div>
+            </div>
+
+            <div class="data-row flex">
+                <span class="title">{{localize "Juink.Target"}}</span>
+                <input type="text" name="system.target" value="{{system.target}}"/>
+
+                <span class="title">{{localize "Juink.Limit"}}</span>
+                <div class="flex">
+                    <select class="select-type" name="system.used.limit" data-dtype="String">
+                        {{#select system.used.limit}}
+                        <option value="-">{{localize "Juink.None"}}</option>
+                        <option value="phase">{{localize "Juink.Phase"}}</option>
+                        <option value="scenario">{{localize "Juink.Scenario"}}</option>
+                        {{/select}}
+                    </select>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+
+    {{editor enrichedBiography target="system.description" button=true editable=editable }}
+
+    
+    <section class="item-footer">
+
+        <div class="title">{{localize "Juink.Effect"}}</div>
+        <div class="flex">
+            <select name="system.effect.timing" data-dtype="String">
+                {{#select system.effect.timing}}
+                <option value="-">-</option>
+                <option value="calculate">{{localize "Juink.Calculate"}}</option>
+                <option value="decrease">{{localize "Juink.Decrease"}}</option>
+                <option value="dice">{{localize "Juink.RollDice"}}</option>
+                {{/select}}
+            </select>
+    
+            <select name="system.effect.type" data-dtype="String">
+                {{#select system.effect.type}}
+                <option value="-">-</option>
+                <option value="addLife">{{localize "Juink.AddLife"}}</option>
+                <option value="addHope">{{localize "Juink.AddHope"}}</option>
+                <option value="addDice">{{localize "Juink.AddDice"}}</option>
+                <option value="changeDice">{{localize "Juink.ChangeDice"}}</option>
+                <option value="reRollDice">{{localize "Juink.reRollDice"}}</option>
+                <option value="runMacro">{{localize "Juink.RunMacro"}}</option>
+                {{/select}}
+            </select>
+    
+            <input class="effect-value" name="system.effect.value" type="text" value="{{system.effect.value}}" 
+            {{#ifEquals system.effect.type "changeDice"}}
+                placeholder="{{localize "Juink.ChangeDiceGuide"}}"
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "addLife"}}
+                placeholder="{{localize "Juink.inputDiceGuide"}}"
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "reRollDice"}}
+                placeholder="{{localize "Juink.inputMultiNumberGuide"}}"
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "-"}}
+                placeholder=""
+            {{/ifEquals}}
+
+            {{#ifEquals system.effect.type "runMacro"}}
+                placeholder=""
+            {{else}}
+                placeholder="{{localize "Juink.inputNumberGuide"}}"
+            {{/ifEquals}}
+            >
+        </div>
+
+        {{#ifEquals system.effect.type "runMacro"}}
+        <div class="macro-checked">
+            <input name="system.effect.macro" type="text" value="{{system.effect.macro}}" placeholder="{{localize "Juink.TypeMacro"}}" >
+        </div>
+        {{/ifEquals}}
+    </section>
+
+
+</form>

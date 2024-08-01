@@ -1,0 +1,1591 @@
+
+
+.juink {
+  /* Sheet Tabs */
+  /* Items List */
+  /* Attributes */
+}
+
+.flex {
+  display: flex;
+}
+
+.window-app.juink.sheet.actor .window-content {
+  background: none;
+}
+
+.juink .background-img {
+  position: absolute;
+  top: 17px;
+  left: 1px;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(4% 5% 4% 5% round 28px);
+}
+
+.juink .background-img-changer {
+  position: absolute;
+  left: calc(42% + 23px);
+  top: 65px;
+  width: 23px;
+  height: 23px;
+  z-index: 2;
+  filter: invert(1);
+  border: none;
+}
+
+.juink .blur {
+  background-color: white;
+  filter: opacity(0.5);
+}
+
+.juink .phone-base {
+  background: url(../assets/base.png);
+  background-size: 250%;
+  background-position-x: center;
+  background-position-y: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.juink .main-screen {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  width: calc(100% - 80px);
+  height: calc(100% - 90px);
+  overflow: hidden;
+}
+
+.juink .main-screen .tabs {
+  display: none;
+}
+
+.juink .main-screen .default-screen {
+  width: 100%;
+  margin-top: 52px;
+}
+
+
+/* Initial Screen */
+.juink .main-screen .default-screen .init-screen {
+  padding-top: 32px;
+}
+
+.juink .main-screen .default-screen .init-screen .profile-img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border: 6px double;
+  margin: auto;
+  background: #ffffffc4;
+  position: relative;
+  z-index: 1;
+}
+
+.juink .main-screen .default-screen .init-screen .move-tab {
+  cursor: pointer;
+}
+
+.juink .main-screen .default-screen .init-screen .label {
+  width: 150px;
+  margin: auto;
+  margin-top: 4px;
+}
+
+.juink .main-screen .default-screen .init-screen .label .title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 3px solid darkred;
+  background: none;
+  word-break: keep-all;
+}
+
+.juink .main-screen .default-screen .init-screen .juin {
+  width: 60px;
+  position: absolute;
+  right: 8px;
+  top: 14px;
+}
+
+.juink .main-screen .default-screen .init-screen .juin img {
+  border: none;
+}
+
+.juink .main-screen .default-screen .init-screen .juin input {
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  height: 20px;
+  background: none;
+}
+
+.juink .main-screen .default-screen .init-screen .juin .title {
+  border-bottom: 2px solid darkred;
+  position: relative;
+  top: -3px;
+}
+
+
+/* Profile Screen */
+.juink .main-screen .profile-screen .profile-img  {
+  width: 125px;
+  height: 125px;
+  border: 6px double;
+  margin-right: 4px;
+  background: whitesmoke;
+}
+
+.juink .main-screen .profile-screen .title {
+  font-size: 19px;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  height: 37px;
+  background: #222222;
+  border-radius: 0;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.juink .main-screen .profile-screen .nameplate {
+  width: 60%;
+}
+
+.juink .main-screen .profile-screen .nameplate .detail-info {
+  margin-top: 3px;
+  text-align: center;
+}
+
+.juink .main-screen .profile-screen .nameplate .detail-info * {
+  flex: 1;
+}
+
+.juink .main-screen .profile-screen .nameplate .detail-info .sub-title {
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding-top: 2px;
+}
+
+.juink .main-screen .profile-screen .nameplate .detail-info input {
+  margin-right: 2px;
+  background: white;
+}
+
+.juink .main-screen .profile-screen .nameplate .detail-info .long-input {
+  flex: 3;
+}
+
+.juink .main-screen .profile-screen .memo {
+  margin-top: 4px;
+}
+
+.juink .main-screen .profile-screen .memo .title {
+  display: block;
+  font-size: 14px;
+  padding: 2px;
+  height: 25px;
+}
+
+.juink .main-screen .profile-screen .memo .editor, .juink .main-screen .profile-screen .memo .editor-content {
+  padding: 0;
+  min-height: 220px;
+}
+
+
+/* Attributes Screen */
+.juink .main-screen .attributes-screen {
+
+}
+
+.juink .main-screen .attributes-screen .job-card {
+  border: 3px double;
+  box-shadow: 2px 2px 2px black;
+  margin: 3px;
+  background: #f5f5f5e0;
+}
+
+.juink .main-screen .attributes-screen .job-card .title {
+  height: 25px;
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+
+.juink .main-screen .attributes-screen .job-card .title .label {
+  width: 62px;
+  background: black;
+  color: white;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.juink .main-screen .attributes-screen .job-card .title .name {
+  flex: 1;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.juink .main-screen .attributes-screen .job-card .title button {
+  width: 63px;
+  font-size: 12px;
+  padding: 0;
+  line-height: 12px;
+  padding-top: 3px;
+  background: crimson;
+  color: white;
+}
+
+.juink .main-screen .attributes-screen .job-card .job-content {
+  padding: 0 4px;
+}
+
+.juink .main-screen .attributes-screen .job-card .job-data {
+  text-align: center;
+}
+
+.juink .main-screen .attributes-screen .job-card .job-data * {
+  flex: 1;
+}
+
+.juink .main-screen .attributes-screen .job-card .job-data .title {
+  border: none;
+  background: black;
+  color: white;
+  padding-top: 2px;
+}
+
+.juink .main-screen .attributes-screen .job-card .job-data .content {
+  padding-top: 2px;
+  font-weight: bold;
+  border-top: 1px solid;
+}
+
+.juink .main-screen .attributes-screen .attributes {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0px 2px;
+  padding: 0;
+  word-break: keep-all;
+  margin: 3px;
+  margin-top: 24px;
+  text-align: center;
+  border: 3px double;
+  box-shadow: 2px 2px 2px black;
+  background: bottom;
+}
+
+.juink .main-screen .attributes-screen .attributes .attr .title {
+  background: black;
+  color: white;
+  padding: 2px 0;
+  margin-bottom: 1px;
+}
+
+.juink .main-screen .attributes-screen .attributes .attr .add {
+  width: 100%;
+  text-align: center;
+}
+
+.juink .main-screen .attributes-screen .attributes .attr .content {
+  background: white;
+  padding: 1px 0;
+  margin: 1px;
+  font-weight: bold;
+  min-height: 20px;
+}
+
+
+/* Bags Screen */
+.juink .main-screen .bags-screen {
+
+}
+
+.juink .main-screen .bags-screen .item-bag {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0px 10px;
+  padding: 0;
+  word-break: keep-all;
+}
+
+.juink .main-screen .bags-screen .item-bag .item {
+  border: 1px solid;
+  padding: 3px 5px;
+  box-shadow: 2px 2px 2px black;
+  background: #ffffffc4;
+}
+
+.juink .main-screen .bags-screen .item-bag .item .name {
+  background: black;
+  color: white;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 2px;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.juink .main-screen .bags-screen .item-bag .item .name:hover {
+  outline: none;
+  box-shadow: 0 0 5px var(--color-shadow-primary);
+}
+
+.juink .main-screen .bags-screen .item-bag .show-item, .juink .main-screen .bags-screen .item-bag .use-item {
+  cursor: pointer;
+}
+
+
+.juink .main-screen .bags-screen .item-bag .item .item-control {
+  display: flex;
+  text-align: center;
+}
+
+.juink .main-screen .bags-screen .item-bag .item .item-control button {
+  width: 30px;
+  height: 30px;
+  line-height: 10px;
+  font-weight: bold;
+  background: black;
+  color: white;
+  border: none;
+}
+
+.juink .main-screen .bags-screen .item-bag .item .item-control span {
+  flex: 1;
+  font-size: 18px;
+  padding-top: 3px;
+  font-weight: bold;
+}
+
+
+/* Bags Screen */
+.juink .main-screen .address-screen {
+
+}
+
+.juink .main-screen .address-screen .address-list {
+
+}
+
+.juink .main-screen .address-screen .address-list .title {
+  position: relative;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 4px 0;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.juink .main-screen .address-screen .address-list .title button {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  padding: 0;
+  top: 3px;
+  right: 3px;
+  line-height: 12px;
+  border: none;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+
+/* Address Screen */
+.juink .main-screen .address-screen .address-list .address {
+  display: flex;
+  margin: 2px 0px;
+  padding: 1px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  background: #ffffffc4;
+}
+
+.juink .main-screen .address-screen .address-list .address img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.juink .main-screen .address-screen .address-list .address .name {
+  flex: 1;
+  height: 30px;
+  margin: 8px 0;
+  margin-left: 9px;
+  margin-right: 6px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.juink .main-screen .address-screen .address-list .address .state {
+  margin: 12px 5px;
+}
+
+.juink .main-screen .address-screen .address-list .address .feeling {
+  background: white;
+  text-align: center;
+}
+
+.juink .main-screen .address-screen .address-list .address button {
+  width: 23px;
+  height: 23px;
+  border: none;
+  background: none;
+  margin: 11px 0;
+  margin-right: 3px;
+  line-height: 12px;
+  text-align: center;
+}
+
+
+/* Diary Screen */
+.juink .main-screen .diary-screen nav.diary-tabs {
+  border-bottom: 1px solid;
+  border-top: 0;
+  padding: 0;
+  display: flex;
+  text-align: center;
+}
+
+.juink .main-screen .diary-screen .diary-tabs .item {
+  border: 1px solid;
+  background: #bcc8de;
+  border-radius: 4px 4px 0 0;
+  margin: 0 5px -1px;
+  flex: 1;
+}
+
+.juink .main-screen .diary-screen .diary-tabs .item.active {
+  background: #fff;
+  color: #000;
+  border-bottom: 0;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.juink .main-screen .diary-screen .diary .title {
+  background: black;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding: 3px;
+  margin-top: 2px;
+}
+
+.juink .main-screen .diary-screen .diary .editor, .juink .main-screen .diary-screen .diary .editor-content {
+  min-height: 400px;
+}
+
+.juink .main-screen .diary-screen .ability, .juink .dialog-content .item-list, .juin-roll-message .item-list {
+  margin-top: 2px;
+}
+
+.juink .main-screen .diary-screen .ability .item, .juink .dialog-content .item-list .item, .juin-roll-message .item-list .item {
+  margin: 2px 0px;
+  padding: 1px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  background: #ffffffc4;
+}
+
+.juink .main-screen .diary-screen .ability .disabled, .juink .dialog-content .item-list .disabled {
+  background: black;
+  color: white;
+}
+
+.juink .main-screen .diary-screen .ability .item img, .juink .dialog-content .item-list .item img, .juin-roll-message .item-list .item img {
+  width: 50px;
+  height: 50px;
+  border: 3px double;
+  border-radius: 15%;
+  margin-top: 2px;
+}
+
+.juink .main-screen .diary-screen .ability .item .name, .juink .dialog-content .item-list .item .name, .juin-roll-message .item-list .item .name {
+  flex: 1;
+  margin-left: 6px;
+  font-weight: bold;
+}
+
+.juink .main-screen .diary-screen .ability .item input, .juink .dialog-content .item-list .item .name input {
+  margin-top: 11px;
+}
+
+
+
+
+
+
+
+.juink .main-screen .default-screen .basic-status {
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+
+
+.juink .main-screen .default-screen .basic-status .life-title {
+  position: absolute;
+  left: 62px;
+  bottom: 50px;
+  width: 60px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  padding: 4px;
+}
+
+.juink .main-screen .default-screen .basic-status .hope-title {
+  position: absolute;
+  left: 0px;
+  bottom: 50px;
+  width: 60px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.juink .main-screen .default-screen .basic-status .life-bar {
+  position: absolute;
+  bottom: 22px;
+  width: 100%;
+  color: white;
+  height: 28px;
+}
+
+.juink .main-screen .default-screen .basic-status .life-bar .life {
+  display: flex;
+  width: 94px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.juink .main-screen .default-screen .basic-status .life-bar .life input {
+  flex: 1;
+  border: 0;
+  background: none;
+  font-weight: bold;
+  color: white;
+}
+
+.juink .main-screen .default-screen .basic-status .life-bar .life span {
+  padding: 4px 0;
+  font-weight: bold;
+}
+
+.juink .main-screen .default-screen .basic-status .life-bar .life a {
+  margin: 1px 4px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.juink .main-screen .default-screen .basic-status .life-bar .hope {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  font-weight: bold;
+  padding: 0 1px;
+  border: 2px solid whitesmoke;
+  border-top: none;
+}
+
+.juink .main-screen .default-screen .basic-status .life-bar .hope input {
+  width: 25px;
+  background: white;
+  font-weight: bold;
+}
+
+.juink .main-screen .default-screen .basic-status .life-bar .hope a {
+  margin: 0 1px;
+  font-size: 16px;
+}
+
+
+.juink .main-screen .default-screen .basic-status .mad {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  width: 76px;
+  text-align: center;
+  border: 2px solid;
+}
+
+.juink .main-screen .default-screen .basic-status .mad .mad-title {
+  background: black;
+  color: white;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  padding: 3px 0;
+}
+
+.juink .main-screen .default-screen .basic-status .mad .mad-box input {
+  margin: 0;
+}
+
+
+.juink .main-screen .default-screen .changable-screen {
+  height: calc(85% - 80px);
+  overflow: auto;
+}
+
+
+.juink .main-screen .default-screen .app-box {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0px 10px;
+  padding: 0;
+  word-break: keep-all;
+}
+
+.juink .main-screen .default-screen .app-box .application {
+  cursor: pointer;
+}
+
+.juink .main-screen .default-screen .app-box .application .app-icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 9px;
+  margin: auto;
+  border: 1px solid #efefef;
+}
+
+.juink .main-screen .default-screen .app-box .application .app-icon:hover {
+  background: crimson;
+  border-color: crimson;
+}
+
+.juink .main-screen .default-screen .app-box .application .app-icon img {
+  border: none;
+  margin: auto;
+  display: block;
+  position: relative;
+  top: 4px;
+}
+
+.juink .main-screen .default-screen .app-box .application label {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.juink .main-screen .roll-screen {
+  width: 100%;
+  text-align: center;
+}
+
+.juink .main-screen .roll-screen .roll-box {
+  border: 3px solid;
+  margin-bottom: 3px;
+}
+
+.juink .main-screen .roll-screen .title-bar {
+  display: flex;
+  height: 27px;
+  margin-bottom: 5px;
+}
+
+.juink .main-screen .roll-screen .roll-box .title-bar .title {
+  background: black;
+  color: white;
+  width: 145px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.juink .main-screen .roll-screen .roll-box .title-bar select {
+  background: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.juink .main-screen .roll-screen .roll-box .title-bar .add-dice {
+  width: 90px;
+  padding: 0;
+  background: darkred;
+  color: white;
+  font-weight: bold;
+  flex: 1;
+  margin: 0;
+  margin-left: 16px;
+  border: none;
+  border-radius: 0;
+}
+
+
+.juink .main-screen .roll-screen .roll-box .dice-pool {
+  height: 80px;
+  overflow: auto;
+}
+
+.juink .main-screen .roll-screen .roll-box .dice-pool .dice {
+  border: none;
+}
+
+.juink .main-screen .roll-screen .roll-box .dice-pool .dice.unchecked {
+  filter: invert(1);
+}
+
+.juink .main-screen .roll-screen .button-box button {
+  background: black;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.juink .home-button {
+  position: absolute;
+  bottom: 24px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.juink .header .main-title {
+  background: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  font-size: 18px;
+  height: 35px;
+}
+
+.juink .header .scenario-data {
+  flex: 1;
+}
+
+.juink .header .scenario-data .profile-img {
+  width: 98px;
+  height: 98px;
+}
+
+.juink .header .scenario-data .fate-dices, .system-juink .fate-dices {
+  flex: 1;
+  border: 3px double;
+  margin: 4px 18px;
+}
+
+.juink .header .scenario-data .fate-dices .title, .system-juink .fate-dices .title {
+  background: black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 3px 0;
+  cursor: pointer;
+}
+
+.juink .header .scenario-data .fate-dices .dice-box, .system-juink .fate-dices .dice-box {
+  display: flex;
+  gap: 6px;
+  width: 300px;
+  margin: auto;
+  justify-content: center;
+  padding: 6px 0;
+}
+
+.juink .header .scenario-data .fate-dices .dice-box .dice, .system-juink .fate-dices .dice-box .dice {
+  width: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.juink .header .player, .juink .header .juin {
+  width: 60px;
+  margin: 4px;
+}
+
+.juink .header .player img, .juink .header .juin img {
+  border: none;
+  height: 66px;
+}
+
+.juink .header .player input, .juink .header .juin input {
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  height: 20px;
+  background: none;
+}
+
+.juink .header .player .title, .juink .header .juin .title {
+  border-bottom: 2px solid darkred;
+  position: relative;
+  top: -3px;
+}
+
+
+.juink .scenario-contents {
+  position: relative;
+  height: calc(100% - 144px);
+}
+
+.juink .scenario-contents nav.tabs {
+  margin-top: 4px;
+  border-bottom: 1px solid;
+  border-top: 0;
+  padding: 0;
+  display: flex;
+  text-align: center;
+}
+
+.juink .scenario-contents .tabs .item {
+  border: 1px solid black;
+  background: black;
+  color: white;
+  border-radius: 4px 4px 0 0;
+  margin: 0 5px -1px;
+  flex: 1;
+}
+
+.juink .scenario-contents .tabs .item.active {
+  background: #fff;
+  color: #000;
+  border-bottom: 0;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.juink .scenario-contents .tab.active {
+  display: block;
+  height: calc(100% - 15px);
+}
+
+.juink .scenario-contents .item-list {
+  height: calc(100% - 12px);
+  margin: 6px 0;
+}
+
+.juink .scenario-contents .item-list .left-box, .juink .scenario-contents .item-list .right-box {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}
+
+.juink .scenario-contents .item-list .left-box {
+  border-right: 1px solid;
+  padding-right: 3px;
+}
+
+.juink .scenario-contents .item-list .right-box {
+  margin-left: 3px;
+}
+
+.juink .scenario-contents .item-list .item {
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
+}
+
+.juink .scenario-contents .item-list .item .show-item {
+  width: 40px;
+  height: 40px;
+}
+
+.juink .scenario-contents .item-list .item .name {
+  flex: 1;
+  font-weight: bold;
+  margin: 0 4px;
+}
+
+.juink .scenario-contents .item-list .item .name .life-bar {
+  color: white;
+  text-align: center;
+}
+
+.juink .scenario-contents .item-list .item .name .life-bar .life {
+  display: flex;
+  width: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.juink .scenario-contents .item-list .item .name .life-bar .life input {
+  flex: 1;
+  border: 0;
+  background: none;
+  font-weight: bold;
+  color: white;
+  height: 18px;
+}
+
+.juink .scenario-contents .item-list .item .name .life-bar .life span {
+  padding: 0;
+  font-weight: bold;
+}
+
+.juink .scenario-contents .item-list .item .event-select {
+  margin-top: 8px;
+}
+
+.juink .scenario-contents .item-list .item button {
+  width: 23px;
+  height: 23px;
+  border: none;
+  background: none;
+  margin: 8px 0;
+  margin-right: 3px;
+  line-height: 12px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.window-app.juink.sheet.item .window-content {
+  padding: 0;
+  background: ghostwhite;
+}
+
+.juink .item .job-card {
+
+}
+
+.juink.item .job-card .flex * {
+  flex: 1;
+}
+
+.juink.item .job-card .desc-section {
+  flex: 3;
+}
+
+.juink.item .job-card .desc-section .title {
+  border: none;
+  background: black;
+  color: white;
+  text-align: center;
+  border-radius: 0;
+  font-size: 19px;  
+  height: 32px;
+  font-weight: bold;
+}
+
+.juink.item .job-card .desc-section .editor, .juink.item .job-card .desc-section .editor-content {
+  min-height: 144px;
+  padding: 0 4px;
+}
+
+.juink.item .job-card .data-section {
+  flex: 1;
+}
+
+.juink.item .job-card .data-section .title {
+  background: black;
+  height: 32px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0;
+  margin-bottom: 4px;
+}
+
+.juink.item .job-card .data-section input {
+  height: calc(100% - 4px);
+  text-align: center;
+  background: white;
+}
+
+.juink.item .job-card .data-section button {
+  width: calc(100% - 2px);
+  margin-bottom: 3px;
+}
+
+
+.juink .item-header {
+  width: 100%;
+}
+
+.juink .item-header .item-status {
+  flex: 1;
+}
+
+.juink .item-header .profile-img {
+  width: 70px;
+  height: 70px;
+  margin-right: 4px;
+  background: black;
+  border-radius: 0;
+}
+
+.juink .item-header .title-bar .title {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  font-size: 19px;
+  height: 34px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.juink .item-header .title-bar .float-left {
+  position: absolute;
+  width: 33px;
+  height: 30px;
+  top: 31px;
+  left: 75px;
+  background: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 19px;
+  border: none;
+}
+
+.juink .item-header .title-bar .float-right {
+  position: absolute;
+  width: 33px;
+  height: 30px;
+  top: 31px;
+  right: 4px;
+  background: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.juink .item-header .data-row .title {
+  width: 63%;
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  height: 32px;
+  padding-top: 3px;
+}
+
+.juink .item-header .data-row .slash-input {
+  display: flex;
+  margin-left: 8px;
+}
+
+.juink .item-header .data-row .slash-input input {
+  width: calc(50% - 16px);
+  background: white;
+  height: 32px;
+  text-align: center;
+}
+
+.juink .item-header .data-row .slash-input span {
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 3px;
+}
+
+.juink .editor, .juink .editor-content {
+  min-height: 220px;
+  resize: none;
+  padding: 4px;
+}
+
+.juink .item-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.juink .item-footer .title {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 4px;
+}
+
+.juink .item-footer select, .juink .item-footer input {
+  background: white;
+  text-align: center;
+}
+
+.juink .ability .item-header .title-bar .float-left {
+  top: 31px;
+  left: 1px;
+  width: 26px;
+  height: 26px;
+  margin: 3px 5px;
+  font-size: 17px;
+}
+
+.juink .ability .item-header .title-bar .float-right {
+  top: 30px;
+  right: 2px;
+  width: 26px;
+  height: 26px;
+}
+
+.juink .ability .item-header .profile-img {
+  width: 85px;
+  height: 85px;
+}
+
+.juink .ability .item-header .data-box {
+  margin-right: 3px;
+}
+
+.juink .ability .item-header .data-row .title {
+  width: 50px;
+  height: 26px;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.juink .ability .item-header .data-row input, .juink .ability .item-header .data-row select, .juink .ability .item-header .data-row .slash-input {
+  flex: 1;
+  text-align: center;
+}
+
+.juink .ability .item-header .data-row .slash-input {
+  margin: 0;
+}
+
+.juink .ability .item-header .data-row .slash-input input {
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.juink .ability .item-header .data-row .slash-input span {
+  margin: 0 6px;
+}
+
+.juink .ability .item-header .data-row .inner-check {
+  flex: 1;
+  position: relative;
+}
+
+.juink .ability .item-header .data-row .inner-check .float-right {
+  position: absolute;
+  top: 0;
+  right: -2px;
+}
+
+.juink .ability .editor, .juink .ability .editor-content {
+  min-height: 170px;
+}
+
+.juink .ability.identity .editor, .juink .ability.identity .editor-content {
+  min-height: 235px;
+}
+
+.juink .event .item-header img {
+  width: 80px;
+  height: 80px;
+}
+
+.juink .event .item-header .title-bar .title {
+  font-size: 15px;
+  width: 100%;
+  height: 26px;
+  margin-bottom: 2px;
+}
+
+.juink .event .item-header .data-row .title {
+  font-size: 14px;
+  height: 26px;
+  margin-bottom: 2px;
+}
+
+.juink .event .item-header .data-row input {
+  text-align: center;
+  font-weight: bold;
+}
+
+.juink .event .item-header .data-row .flex-1 {
+  flex: 1;
+}
+
+.juink .event .item-header .data-row .flex-2 {
+  flex: 2;
+}
+
+.juink .event .item-header .data-row .long-title {
+  font-size: 13px;
+  width: 56%;
+}
+
+.juink .event .item-header .inner-check {
+  position: absolute;
+  right: -1px;
+}
+
+.juink .event .item-header .life-bar {
+  position: relative;
+  width: 100%;
+  color: white;
+  height: 24px;
+  background: black;
+}
+
+.juink .event .item-header .life-bar .life {
+  display: flex;
+  width: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.juink .event .item-header .life-bar .life input {
+  flex: 1;
+  border: 0;
+  background: none;
+  font-weight: bold;
+  color: white;
+}
+
+.juink .event .item-header .life-bar .life span {
+  padding: 4px 0;
+  font-weight: bold;
+}
+
+
+
+.juink .dialog-content .item-list .title, .juink .dialog-content .additioanl .title, .juin-roll-message .title {
+  background: black;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 3px 0;
+}
+
+.chat-message .toggle-btn {
+  cursor: pointer;
+}
+
+
+
+.juink .dialog-content .item-list .item img, .juin-roll-message .item-list .item img {
+  width: 35px;
+  height: 35px;
+}
+
+.juink .dialog-content .item-list.item .item .name, .juink .dialog-content .item-list.event .item .name, .juin-roll-message .item .name {
+  font-size: 16px;
+  padding: 7px 0;
+}
+
+.juink .dialog-content .item .item-description, .juin-roll-message .item .item-description {
+  display: none;
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 100%;
+}
+
+.juink .dialog-content .item-list .item button {
+  width: 45px;
+  height: 30px;
+  margin: 2px 0;
+  background: white;
+}
+
+
+
+
+.juink .dialog-content .input-bar {
+  background: black;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  text-align: left;
+  height: 26px;
+  line-height: 28px;
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+.juink .dialog-content .input-bar .flex {
+  float: right;
+}
+
+.juink .dialog-content .input-bar a, .juink .dialog-content .input-bar span {
+  font-size: 20px;
+  line-height: 13px;
+  padding: 6px 6px;
+}
+
+.juink .dialog-content .input-bar input {
+  width: 25px;
+  padding: 0;
+  background: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.juink .dialog-content .input-bar button {
+  height: 26px;
+  background: white;
+  line-height: 15px;
+  width: 44px;
+}
+
+.juink .dialog-content .input-bar .add-input {
+  background: white;
+  padding: 0px 3px;
+  color: black;
+  line-height: 18px;
+  height: 18px;
+  margin-left: 3px;
+  display: inline-block;
+}
+
+
+.juink .dialog-content .additioanl .flex {
+  margin-top: 6px;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.juink .dialog-content .additioanl span {
+  font-size: 20px;
+  padding: 1px 0;
+}
+
+.juink .dialog-content .additioanl .flex input {
+  width: 40px;
+  background: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.juink .dialog-content .add-dice-hint {
+  text-align: center;
+}
+
+.juink .dice-select {
+  filter: invert(20%) sepia(85%) saturate(415%) hue-rotate(94deg) brightness(70%) contrast(100%);
+  width:45px;
+  height:45px;
+}
+
+
+
+
+.system-juink .always-box {
+  position: fixed;
+  z-index: 70;
+  top: 7px;
+  right: 310px;
+  width: 300px;
+  border: 1px solid;
+  background: #ddd;
+}
+
+.system-juink .always-box .scenario {
+  background: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.system-juink .always-box .fate-dices .dice-box {
+  width: auto;
+}
+
+.system-juink .always-box .phase-buttons {
+  display: flex;
+  margin-bottom: 1px;
+}
+
+.system-juink .always-box .phase-buttons button {
+  background: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+
+.juin-roll-message .dice-roll .dice-result .influence {
+  flex: none;
+  font-size: var(--font-size-16);
+  font-weight: bold;
+  padding: 0 5px;
+  padding-top: 2px;
+  background: darkred;
+  color: white;
+  border: 1px solid var(--color-text-light-6);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  height: 25px;
+}
+
+.juin-roll-message .title {
+  padding: 0;
+  line-height: 23px;
+}
+
+.juin-roll-message .actived-effect-btn {
+  background: brown;
+  margin-bottom: 4px;
+}
+
+.juin-roll-message .use-effect-btn {
+  background: steelblue; 
+  margin-bottom: 4px;
+}
+
+.chat-rolltable-card {
+  text-align: center;
+}
+
+.chat-rolltable-card .title {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.chat-rolltable-card .text {
+  background-color: ivory;
+  padding: 8px 2px;
+}
+
+.chat-rolltable-card .result {
+  background-color: #535353;
+  color: white;
+  font-weight: bold;
+padding: 4px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* .dice-tooltip-always-open */
+.dice-tooltip-always-open .part-header {
+  margin: 0;
+  line-height: 24px;
+  border-bottom: 1px solid var(--color-text-light-6);
+}
+.dice-tooltip-always-open .part-header .part-formula {
+  font-weight: bold;
+  flex: 1;
+}
+.dice-tooltip-always-open .part-header .part-flavor {
+  flex: none;
+  margin-right: 5px;
+  font-size: var(--font-size-12);
+  color: var(--color-text-dark-secondary);
+}
+.dice-tooltip-always-open .part-header .part-total {
+  flex: none;
+  font-size: var(--font-size-16);
+  font-weight: bold;
+  padding: 0 5px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-text-light-6);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+.dice-tooltip-always-open .dice-rolls {
+  list-style: none;
+  margin: 5px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.dice-tooltip-always-open .dice-rolls .roll {
+  position: relative;
+  min-width: 24px;
+  line-height: 24px;
+  float: left;
+  margin-right: 1px;
+  background-image: url("/icons/svg/d6-grey.svg");
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  font-size: var(--font-size-16);
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+.dice-tooltip-always-open .dice-rolls .roll.d4 {
+  background-image: url("/icons/svg/d4-grey.svg");
+}
+.dice-tooltip-always-open .dice-rolls .roll.d6 {
+  background-image: url("/icons/svg/d6-grey.svg");
+}
+.dice-tooltip-always-open .dice-rolls .roll.d8 {
+  background-image: url("/icons/svg/d8-grey.svg");
+}
+.dice-tooltip-always-open .dice-rolls .roll.d10 {
+  background-image: url("/icons/svg/d10-grey.svg");
+}
+.dice-tooltip-always-open .dice-rolls .roll.d12 {
+  background-image: url("/icons/svg/d12-grey.svg");
+}
+.dice-tooltip-always-open .dice-rolls .roll.d20 {
+  background-image: url("/icons/svg/d20-grey.svg");
+}
+.dice-tooltip-always-open .dice-rolls .roll.success,
+.dice-tooltip-always-open .dice-rolls .roll.max {
+  color: #18520b;
+  filter: sepia(0.5) hue-rotate(60deg);
+}
+.dice-tooltip-always-open .dice-rolls .roll.failure,
+.dice-tooltip-always-open .dice-rolls .roll.min {
+  color: #aa0200;
+  filter: sepia(0.5) hue-rotate(-60deg);
+}
+.dice-tooltip-always-open .dice-rolls .roll.discarded,
+.dice-tooltip-always-open .dice-rolls .roll.rerolled {
+  color: inherit;
+  filter: sepia(0.5) contrast(0.75) opacity(0.4);
+}
+.dice-tooltip-always-open .dice-rolls .roll.exploded:before {
+  font-size: 0.5rem;
+  font-family: var(--font-awesome);
+  content: "\f666";
+  position: absolute;
+  top: -8px;
+  right: 0;
+}
