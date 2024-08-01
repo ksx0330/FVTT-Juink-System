@@ -19,7 +19,4 @@ Images
 <img src="https://github.com/user-attachments/assets/acdf5556-b871-457e-82d3-df39e4595958" width=240>
 <img src="https://github.com/user-attachments/assets/d634517e-ab71-4f25-9807-d70fba4dece5" width=240>
 
-Legal
-------------
-本作は、「冒険企画局」が権利を有する『呪印感染』の二次創作物です。
-（C）冒険企画局
+
