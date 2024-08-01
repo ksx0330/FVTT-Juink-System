@@ -36,6 +36,15 @@ export class JuinkItem extends Item {
 
             await game.Juink.relayMessage(roll, chatMessage);
 
+        } else if (type == "addValue") {
+            if (chatMessage == null)
+                return;
+
+            let roll = await game.Juink.addDice(chatMessage, 0, Number(this.system.effect.value));
+            chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
+
+            await game.Juink.relayMessage(roll, chatMessage);
+
         } else if (type == "changeDice") {
             if (chatMessage == null)
                 return;
