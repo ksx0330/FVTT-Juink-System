@@ -1407,7 +1407,6 @@
   z-index: 70;
   top: 7px;
   right: 310px;
-  width: 300px;
   border: 1px solid;
   background: #ddd;
 }
@@ -1424,6 +1423,7 @@
 
 .system-juink .always-box .fate-dices .dice-box {
   width: auto;
+  margin: 0 15px;
 }
 
 .system-juink .always-box .phase-buttons {
