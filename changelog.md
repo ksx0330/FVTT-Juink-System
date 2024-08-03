@@ -7,3 +7,5 @@ Changelog
 1.0.2 - Fix bug of the fate dice
 
 1.0.3 - png to PNG
+
+1.0.4 - add features of a dialog option and increasing fate dices
