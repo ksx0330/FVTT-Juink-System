@@ -10,15 +10,10 @@
             <div class="fate-dices">
                 <div class="title">{{localize "Juink.FateDices"}}</div>
                 <div class="dice-box">
-                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[0]}}.PNG" data-pos="0">
-                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[1]}}.PNG" data-pos="1">
-                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[2]}}.PNG" data-pos="2">
-                    <img class="dice" src="systems/juink/assets/dices/{{system.dice.[3]}}.PNG" data-pos="3">
-    
-                    <input type="hidden" name="system.dice.0" value="{{system.dice.[0]}}" data-dtype="Number">
-                    <input type="hidden" name="system.dice.1" value="{{system.dice.[1]}}" data-dtype="Number">
-                    <input type="hidden" name="system.dice.2" value="{{system.dice.[2]}}" data-dtype="Number">
-                    <input type="hidden" name="system.dice.3" value="{{system.dice.[3]}}" data-dtype="Number">
+                    {{#each system.dice as |dice id|}}
+                    <img class="dice" src="systems/juink/assets/dices/{{dice}}.PNG" data-pos="{{id}}">
+                    <input type="hidden" name="system.dice.{{id}}" value="{{dice}}" data-dtype="Number">
+                    {{/each}}
                 </div>
             </div>
 

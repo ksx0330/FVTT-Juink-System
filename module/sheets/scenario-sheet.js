@@ -117,7 +117,15 @@ export class JuinkScenarioSheet extends ActorSheet {
             await item.update({[name]: val});
         });
 
-        html.find(".fate-dices .title").click(async () => await this.document.chargeDice());
+        html.find(".fate-dices .title").on('mousedown', async event => {
+            if (!game.user.isGM)
+                return;
+    
+            if (event.button == 2 || event.which == 3)
+                await this.document.purgeDice();
+            else 
+                await this.document.chargeDice();
+        });
         html.find(".dice").on('mousedown', async event => {
             let pos = $(event.currentTarget)[0].dataset.pos;
             if (event.button == 2 || event.which == 3)

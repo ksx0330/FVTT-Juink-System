@@ -76,16 +76,24 @@ function updateAlwaysBox() {
     let scenarioId = game.scenes.active.getFlag("juink", "scenario");
     let scenario = game.actors.get(scenarioId);
 
+    let fateDice = [];
+    for (let dice of Object.values(scenario.system.dice))
+        fateDice.push(dice);
+
     $(".always-box").empty();
     let content = `
         <div class="scenario">${scenario.name}</div>
         <div class="fate-dices">
             <div class="title">${game.i18n.localize("Juink.FateDices")}</div>
-            <div class="dice-box">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[0]}.PNG" data-pos="0">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[1]}.PNG" data-pos="1">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[2]}.PNG" data-pos="2">
-                <img class="dice" src="systems/juink/assets/dices/${scenario.system.dice[3]}.PNG" data-pos="3">
+            <div class="dice-box">`;
+
+    $(fateDice).each(element => {
+        content += `
+                <img class="dice" src="systems/juink/assets/dices/${fateDice[element]}.PNG" data-pos="${element}">
+        `;
+    });
+    
+    content += `
             </div>
         </div>
     `;
@@ -261,8 +269,6 @@ async function addDice(message, dice, add) {
     
     let roll = new Roll(formula);
     roll.terms[0].number = dice;
-
-    console.log(roll.formula);
 
     for (let result of mRoll.terms[0].results)
         roll.terms[0].results.push(result);

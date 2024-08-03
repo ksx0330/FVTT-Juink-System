@@ -131,12 +131,9 @@ export class JuinkActor extends Actor {
     async chargeDice() {
         let checkAndRandom = num => (num != 0) ? num : Math.floor(Math.random() * 6) + 1;
         
-        let updates = {
-            "0": checkAndRandom(this.system.dice[0]),
-            "1": checkAndRandom(this.system.dice[1]),
-            "2": checkAndRandom(this.system.dice[2]),
-            "3": checkAndRandom(this.system.dice[3]),
-        }
+        let updates = {};
+        for (let id of Object.keys(this.system.dice))
+            updates[id] = checkAndRandom(this.system.dice[id]);
         await this.update({"system.dice": updates});
     
         let context = game.i18n.localize("Juink.ChargeFateDice") ;
@@ -144,12 +141,9 @@ export class JuinkActor extends Actor {
     }
 
     async purgeDice() {
-        let updates = {
-            "0": 0,
-            "1": 0,
-            "2": 0,
-            "3": 0,
-        }
+        let updates = {};
+        for (let id of Object.keys(this.system.dice))
+            updates[id] = 0;
         await this.update({"system.dice": updates});
     
         let context = game.i18n.localize("Juink.PurgeFateDice") ;

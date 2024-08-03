@@ -7,12 +7,10 @@ export class InfluenceDialog extends Dialog {
         this.scenario = game.actors.get(scenarioId);
 
         this.actionDice = this.message.rolls[0].terms[0].results.map( e => e.result );
-        this.fateDice = [
-            this.scenario.system.dice[0],
-            this.scenario.system.dice[1],
-            this.scenario.system.dice[2],
-            this.scenario.system.dice[3]
-        ]
+        this.fateDice = [];
+
+        for (let dice of Object.values(this.scenario.system.dice))
+            this.fateDice.push(dice);
 
         this.total = this._getTotal();
 
@@ -77,11 +75,14 @@ export class InfluenceDialog extends Dialog {
             </div>
             <div class="form-group">
                 <label>${ game.i18n.localize("Juink.FateDices") }</label>
-                <div>
-                    <img class="fate" width=45 height=45 data-key=0 data-value=${this.fateDice[0]} src="systems/juink/assets/dices/${this.fateDice[0]}.PNG">
-                    <img class="fate" width=45 height=45 data-key=1 data-value=${this.fateDice[1]} src="systems/juink/assets/dices/${this.fateDice[1]}.PNG">
-                    <img class="fate" width=45 height=45 data-key=2 data-value=${this.fateDice[2]} src="systems/juink/assets/dices/${this.fateDice[2]}.PNG">
-                    <img class="fate" width=45 height=45 data-key=3 data-value=${this.fateDice[3]} src="systems/juink/assets/dices/${this.fateDice[3]}.PNG">
+                <div>`;
+
+        $(this.fateDice).each(element => {
+            content += `
+                    <img class="fate" width=45 height=45 data-key=${element} data-value=${this.fateDice[element]} src="systems/juink/assets/dices/${this.fateDice[element]}.PNG">
+            `;
+        });
+        content += `
                 </div>
             </div>
             <button type="button" class="dice-change">Change</button><br>
@@ -142,13 +143,10 @@ export class InfluenceDialog extends Dialog {
     }
 
     async _submit() {
-        let dices = {
-            "system.dice.0": this.fateDice[0],
-            "system.dice.1": this.fateDice[1],
-            "system.dice.2": this.fateDice[2],
-            "system.dice.3": this.fateDice[3],
-        };
-        this.scenario.update(dices);
+        let updates = {};
+        for (let i = 0; i < this.fateDice.length; ++i)
+            updates[i] = this.fateDice[i];
+        this.scenario.update({"system.dice": updates});
 
         let roll = this.message.rolls[0].clone();
         roll.terms[0].number = 0;
