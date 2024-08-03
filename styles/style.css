@@ -1312,6 +1312,12 @@
   width: 100%;
 }
 
+.juink .dialog-content .item-list .item input {
+  width: 50px;
+  background: white;
+  text-align: center;
+}
+
 .juink .dialog-content .item-list .item button {
   width: 45px;
   height: 30px;

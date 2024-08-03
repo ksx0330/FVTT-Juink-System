@@ -25,48 +25,98 @@ export class JuinkItem extends Item {
         };
 
         ChatMessage.create(chatData);
+
+        let inputDialog =  (callback, placeholder) => {
+            new Dialog({
+                title: this.name,
+                content: ` 
+                    <div class="form-group">  
+                        <input id="textval" style="width: 100%;" placeholder="${placeholder}"></input>
+                    </div>
+                    <hr>
+                `,
+                buttons: {
+                    confirm: {
+                        label: `Confirm`,
+                        callback: async (dialog_html) => {
+                            let new_val = $(dialog_html).find("#textval")[0].value;
+                            await callback(new_val);
+                        }
+                    }
+                },
+                close: () => {},
+                default: "confirm"
+            },
+            {
+                classes: ["juink"]
+            }).render(true);
+        }
         
         let type = this.system.effect.type;
         if (type == "addDice") {
             if (chatMessage == null)
                 return;
 
-            let roll = await game.Juink.addDice(chatMessage, Number(this.system.effect.value), 0);
-            chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
-
-            await game.Juink.relayMessage(roll, chatMessage);
+            let action = async (input) => {
+                let roll = await game.Juink.addDice(chatMessage, Number(input), 0);
+                chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
+    
+                await game.Juink.relayMessage(roll, chatMessage);
+            }
+            if (this.system.effect.value == "dialog")
+                inputDialog(action, game.i18n.localize("Juink.inputNumberGuide"));
+            else
+                inputDialog(this.system.effect.value);
 
         } else if (type == "addValue") {
             if (chatMessage == null)
                 return;
 
-            let roll = await game.Juink.addDice(chatMessage, 0, Number(this.system.effect.value));
-            chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
-
-            await game.Juink.relayMessage(roll, chatMessage);
+            let action = async (input) => {
+                let roll = await game.Juink.addDice(chatMessage, 0, Number(input));
+                chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
+    
+                await game.Juink.relayMessage(roll, chatMessage);
+            }
+            if (this.system.effect.value == "dialog")
+                inputDialog(action, game.i18n.localize("Juink.inputNumberGuide"));
+            else
+                inputDialog(this.system.effect.value);
 
         } else if (type == "changeDice") {
             if (chatMessage == null)
                 return;
-            
-            let value = this.system.effect.value.trim();
-            let before = Number(value.split(" ")[0].split("[")[1]);
-            let after = Number(value.split(" ")[0].split("[")[1]);
-            let roll = await game.Juink.changeDice(chatMessage, before, after);
-            chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
 
-            await game.Juink.relayMessage(roll, chatMessage);
+            let action = async (input) => {
+                let value = input.trim();
+                let before = Number(value.split(" ")[0].split("[")[1]);
+                let after = Number(value.split(" ")[1].split("]")[0]);
+                let roll = await game.Juink.changeDice(chatMessage, before, after);
+                chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
+    
+                await game.Juink.relayMessage(roll, chatMessage);
+            }
+            if (this.system.effect.value == "dialog")
+                inputDialog(action, game.i18n.localize("Juink.ChangeDiceGuide"));
+            else
+                inputDialog(this.system.effect.value);
 
         } else if (type == "reRollDice") {
             if (chatMessage == null)
                 return;
 
-            let value = this.system.effect.value.trim();
-            let nums = value.split(" ").map(e => Number(e));
-            let roll = await game.Juink.reRollDice(chatMessage, nums);
-            chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
-
-            await game.Juink.relayMessage(roll, chatMessage);
+            let action = async (input) => {
+                let value = input.trim();
+                let nums = value.split(" ").map(e => Number(e));
+                let roll = await game.Juink.reRollDice(chatMessage, nums);
+                chatMessage.flags.juink.activeEffect[this.type][this.id] = this;
+    
+                await game.Juink.relayMessage(roll, chatMessage);
+            }
+            if (this.system.effect.value == "dialog")
+                inputDialog(action, game.i18n.localize("Juink.inputMultiNumberGuide"));
+            else
+                inputDialog(this.system.effect.value);
 
         } else if (type == "addLife" || type == "addHope") {
 

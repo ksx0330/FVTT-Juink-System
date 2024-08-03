@@ -16,6 +16,8 @@ export class JuinkEffectDialog extends Dialog {
             "ability": {}
         }
 
+        this.dialogInputs = {}
+
         let scenarioId = game.scenes.active.getFlag("juink", "scenario");
         let scenario = game.actors.get(scenarioId);
 
@@ -157,6 +159,16 @@ export class JuinkEffectDialog extends Dialog {
             this._updateActived();
         });
 
+        html.find(".dialog-input").change(async event => {
+            const li = event.currentTarget.closest(".item");
+            const itemList = li.dataset.itemList;
+            const item = this[itemList].find(e => e.id == li.dataset.itemId);
+
+            this.dialogInputs[item.id] = $(event.currentTarget).val();
+
+            this._updateActived();
+        });
+
         html.find(".use-check").click(async event => {
             const li = event.currentTarget.closest(".item");
             const itemList = li.dataset.itemList;
@@ -256,19 +268,13 @@ export class JuinkEffectDialog extends Dialog {
 
     _updateActived() {
         this.actived = 0;
-        for (let effect of Object.values(this.activeEffect.event)) {
-            if (effect.system.effect.type == "addDice")
-                this.actived += Number(effect.system.effect.value);
-        }
-        
-        for (let effect of Object.values(this.activeEffect.item)) {
-            if (effect.system.effect.type == "addDice")
-                this.actived += Number(effect.system.effect.value);
-        }
 
-        for (let effect of Object.values(this.activeEffect.ability)) {
-            if (effect.system.effect.type == "addDice")
-                this.actived += Number(effect.system.effect.value);
+        let type = ["event", "item", "ability"];
+        for (let t of type) {
+            for (let item of Object.values(this.activeEffect[t])) {
+                if (item.system.effect.type == "addDice")
+                    this.actived += (item.system.effect.value == "dialog") ? Number(this.dialogInputs[item.id]) : Number(item.system.effect.value)
+            }
         }
 
         if (this.usage == "calculate")
