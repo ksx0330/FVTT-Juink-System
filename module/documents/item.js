@@ -66,7 +66,7 @@ export class JuinkItem extends Item {
             if (this.system.effect.value == "dialog")
                 inputDialog(action, game.i18n.localize("Juink.inputNumberGuide"));
             else
-                inputDialog(this.system.effect.value);
+                action(this.system.effect.value);
 
         } else if (type == "addValue") {
             if (chatMessage == null)
@@ -81,7 +81,7 @@ export class JuinkItem extends Item {
             if (this.system.effect.value == "dialog")
                 inputDialog(action, game.i18n.localize("Juink.inputNumberGuide"));
             else
-                inputDialog(this.system.effect.value);
+                action(this.system.effect.value);
 
         } else if (type == "changeDice") {
             if (chatMessage == null)
@@ -99,7 +99,7 @@ export class JuinkItem extends Item {
             if (this.system.effect.value == "dialog")
                 inputDialog(action, game.i18n.localize("Juink.ChangeDiceGuide"));
             else
-                inputDialog(this.system.effect.value);
+                action(this.system.effect.value);
 
         } else if (type == "reRollDice") {
             if (chatMessage == null)
@@ -116,7 +116,7 @@ export class JuinkItem extends Item {
             if (this.system.effect.value == "dialog")
                 inputDialog(action, game.i18n.localize("Juink.inputMultiNumberGuide"));
             else
-                inputDialog(this.system.effect.value);
+                action(this.system.effect.value);
 
         } else if (type == "addLife" || type == "addHope") {
 
