@@ -226,7 +226,9 @@ export class JuinkActorSheet extends ActorSheet {
         html.find(".add-address").click(async () => {
             let id = randomID(12);
             await this.document.update({[`system.address.list.${id}`]: {
-                "img": "icons/svg/mystery-man.svg"
+                "img": "icons/svg/mystery-man.svg",
+                "name": "",
+                "feel": ""
             }});
         });
 
