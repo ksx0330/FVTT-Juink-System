@@ -83,11 +83,27 @@ export class JuinkActorSheet extends ActorSheet {
     async activateListeners(html) {
         super.activateListeners(html);
 
+        html.find(".move-tab").click(e => {
+            let name = $(e.currentTarget)[0].dataset.tab;
+            this._tabs[0].activate(name, {triggerCallback: true});
+        });
+
+        html.find(".show-job").click(async () => await this.document.system.job.sheet.render(true));
+        
+        html.find(".show-item").click(async event => {
+            const li = event.currentTarget.closest(".item");
+            const item = this.actor.items.get(li.dataset.itemId);
+            item.sheet.render(true);
+        });
+
+        // Everything below here is only needed if the sheet is editable
+        if (!this.options.editable) return;
+
         this.drag = false;
         this.moved = false;
         this.dragPoint = 0;
         this.MaxdragPoint = 25;
-       
+
         let timeoutId = 0;
         let onDragCheck = e => {
             document.body.style.cursor = 'pointer';
@@ -126,12 +142,6 @@ export class JuinkActorSheet extends ActorSheet {
                 e.currentTarget.classList.add('unchecked');
                 e.currentTarget.classList.remove('checked');
             }
-        });
-
-
-        html.find(".move-tab").click(e => {
-            let name = $(e.currentTarget)[0].dataset.tab;
-            this._tabs[0].activate(name, {triggerCallback: true});
         });
 
         html.find(".item-usage-check").on('mousedown', async event => {
@@ -202,12 +212,6 @@ export class JuinkActorSheet extends ActorSheet {
 
         });
 
-        html.find(".show-item").click(async event => {
-            const li = event.currentTarget.closest(".item");
-            const item = this.actor.items.get(li.dataset.itemId);
-            item.sheet.render(true);
-        });
-
         html.find(".add-item").click(async event => {
             const li = event.currentTarget.closest(".item");
             const item = this.actor.items.get(li.dataset.itemId);
@@ -237,11 +241,6 @@ export class JuinkActorSheet extends ActorSheet {
             await item.update({"system.link": !item.system.link});
         });
 
-
-        // Everything below here is only needed if the sheet is editable
-        if (!this.options.editable) return;
-
-        html.find(".show-job").click(async () => await this.document.system.job.sheet.render(true));
         html.find(".delete-job").click(async () => await this.document.system.job.delete());
 
         html.find(".roll-calculate").click(async () => {

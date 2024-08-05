@@ -10,4 +10,6 @@ Changelog
 
 1.0.4 - Add features of a dialog option and increasing fate dices
 
-1.0.5 - Bug fix
+1.0.5 - Fix bug
+
+1.0.6 - Add exception handling when there is no scenario in the scene

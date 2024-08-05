@@ -18,9 +18,12 @@ export class JuinkEffectDialog extends Dialog {
 
         this.dialogInputs = {}
 
-        let scenarioId = game.scenes.active.getFlag("juink", "scenario");
-        let scenario = game.actors.get(scenarioId);
-
+        let scenario = null;
+        if (game.scenes.active != null) {
+            let scenarioId = game.scenes.active.getFlag("juink", "scenario");
+            scenario = game.actors.get(scenarioId);
+        }
+        
         this.eventList = [];
         this.itemList = [];
         this.abilityList = [];
@@ -30,11 +33,13 @@ export class JuinkEffectDialog extends Dialog {
             this.message = message;
             this.isHope = (this.message.flags.juink.usage == "calculate");
 
-            this.eventList = scenario.items.filter(e => 
-                e.type == "event" &&
-                e.system.life.value >= e.system.life.max &&
-                !(e.id in this.actor.system.event)
-            );
+            if (scenario != null) {
+                this.eventList = scenario.items.filter(e => 
+                    e.type == "event" &&
+                    e.system.life.value >= e.system.life.max &&
+                    !(e.id in this.actor.system.event)
+                );
+            }
     
             if (!this.actor.system.itemUsage)
                 this.itemList = actor.items.filter(e => e.type == "item");
@@ -49,13 +54,15 @@ export class JuinkEffectDialog extends Dialog {
             this.type == "addDice";
             this.isHope = (usage == "calculate");
 
-            this.eventList = scenario.items.filter(e => 
-                e.type == "event" &&
-                e.system.life.value >= e.system.life.max &&
-                !(e.id in this.actor.system.event) && 
-                ["-", "dice", usage].includes(e.system.effect.timing) &&
-                ["-", "addDice"].includes(e.system.effect.type)
-            );
+            if (scenario != null) {
+                this.eventList = scenario.items.filter(e => 
+                    e.type == "event" &&
+                    e.system.life.value >= e.system.life.max &&
+                    !(e.id in this.actor.system.event) && 
+                    ["-", "dice", usage].includes(e.system.effect.timing) &&
+                    ["-", "addDice"].includes(e.system.effect.type)
+                );
+            }
     
             if (!this.actor.system.itemUsage) {
                 this.itemList = actor.items.filter(e => 

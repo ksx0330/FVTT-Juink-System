@@ -73,8 +73,17 @@ Hooks.on("updateScene", async (document, options, userId) => {
 });
 
 function updateAlwaysBox() {
-    let scenarioId = game.scenes.active.getFlag("juink", "scenario");
-    let scenario = game.actors.get(scenarioId);
+
+    let scenario = null;
+    if (game.scenes.active != null) {
+        let scenarioId = game.scenes.active.getFlag("juink", "scenario");
+        scenario = game.actors.get(scenarioId);
+    }
+
+    if(scenario == null) {
+        $(".always-box").empty();
+        return;
+    }
 
     let fateDice = [];
     for (let dice of Object.values(scenario.system.dice))
@@ -170,6 +179,7 @@ function updateAlwaysBox() {
                     await item.update({"system.quantity.value": item.system.quantity.max});
 
                 if (item.type == "ability") {
+                    console.log(item);
                     let updates = {};
                     if (item.system.used.limit == "scenario")
                         updates["system.used.state"] = false;
