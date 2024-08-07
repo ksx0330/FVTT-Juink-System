@@ -26,7 +26,9 @@ export class JuinkJobSheet extends JuinkItemSheet {
     async _onSetItems(event) {
         event.preventDefault();
 
-        let defaultItems = game.packs.get("juink.defalt-items").index.reduce((acc, e) => {
+        let pack = game.settings.get("juink", "item-packs-name");
+
+        let defaultItems = game.packs.get(pack).index.reduce((acc, e) => {
             if (e.type == "item")
                 acc.push([e.sort, e.name, e._id, e.uuid]);
             return acc;
