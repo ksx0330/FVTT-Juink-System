@@ -56,7 +56,7 @@ Hooks.once("init", async function() {
     
     JuinkRegisterHelpers.init();
 
-    let itemPackName = 'default-items-' + game.i18n.lang;
+    let itemPackName = 'juink.default-items-' + game.i18n.lang;
 
     game.settings.register("juink", "item-packs-name", {
         name: "SETTINGS.SetItemPack",
