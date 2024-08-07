@@ -112,5 +112,7 @@
     "TYPES.Item.ability": "과거와 비밀",
     "TYPES.Item.item": "아이템",
     "TYPES.Item.event": "이벤트",
-    "TYPES.Item.identity": "정체"
+    "TYPES.Item.identity": "정체",
+
+    "SETTINGS.SetItemPack": "아이템 컨펜디엄 설정"
 }

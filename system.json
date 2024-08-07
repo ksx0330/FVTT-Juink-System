@@ -3,7 +3,7 @@
   "id": "juink",
   "title": "呪印感染 [주인감염]",
   "description": "呪印感染 [주인감염]",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "compatibility": {
     "minimum": "11",
     "verified": "11.315"
@@ -34,8 +34,8 @@
     {
       "label": "아이템",
       "type": "Item",
-      "name": "defalt-items",
-      "path": "packs/defalt-items",
+      "name": "default-items-ko",
+      "path": "packs/default-items-ko",
       "system": "juink",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -46,8 +46,8 @@
     {
       "label": "샘플 캐릭터",
       "type": "Actor",
-      "name": "sample-character-kr",
-      "path": "packs/sample-character-kr",
+      "name": "sample-character-ko",
+      "path": "packs/sample-character-ko",
       "system": "juink",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -58,8 +58,8 @@
     {
       "label": "굴림표",
       "type": "RollTable",
-      "name": "default-rolltable-kr",
-      "path": "packs/default-rolltable-kr",
+      "name": "default-rolltable-ko",
+      "path": "packs/default-rolltable-ko",
       "system": "juink",
       "ownership": {
         "PLAYER": "OBSERVER",

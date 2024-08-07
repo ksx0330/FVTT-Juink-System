@@ -56,6 +56,16 @@ Hooks.once("init", async function() {
     
     JuinkRegisterHelpers.init();
 
+    let itemPackName = 'default-items-' + game.i18n.lang;
+
+    game.settings.register("juink", "item-packs-name", {
+        name: "SETTINGS.SetItemPack",
+        hint: "SETTINGS.SetItemPack",
+        scope: "world",
+        type: String,
+        default: itemPackName,
+        config: true
+    });
 });
 
 Hooks.once("ready", async function() {
