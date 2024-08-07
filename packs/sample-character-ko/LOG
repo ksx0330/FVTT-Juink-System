@@ -1,5 +1,5 @@
-2024/08/08-02:19:03.730 6dec Recovering log #6
-2024/08/08-02:19:03.730 6dec Level-0 table #8: started
-2024/08/08-02:19:03.737 6dec Level-0 table #8: 3637 bytes OK
-2024/08/08-02:19:03.741 6dec Delete type=0 #6
-2024/08/08-02:19:03.741 6dec Delete type=3 #4
+2024/08/08-02:45:07.363 4560 Recovering log #9
+2024/08/08-02:45:07.363 4560 Level-0 table #11: started
+2024/08/08-02:45:07.370 4560 Level-0 table #11: 3462 bytes OK
+2024/08/08-02:45:07.372 4560 Delete type=0 #9
+2024/08/08-02:45:07.373 4560 Delete type=3 #7
