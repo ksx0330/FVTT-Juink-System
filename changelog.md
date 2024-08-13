@@ -17,3 +17,5 @@ Changelog
 1.0.7 - Fix bug
 
 1.0.8 - Add a feature of setting item compendium option
+
+1.0.9 - Japanese language support
