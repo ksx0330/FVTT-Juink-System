@@ -28,6 +28,12 @@
       "name": "한국어",
       "path": "lang/ko.json",
       "flags": {}
+    },
+    {
+      "lang": "ja",
+      "name": "日本語",
+      "path": "lang/ja.json",
+      "flags": {}
     }
   ],
   "packs": [
@@ -60,6 +66,42 @@
       "type": "RollTable",
       "name": "default-rolltable-ko",
       "path": "packs/default-rolltable-ko",
+      "system": "juink",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "アイテム",
+      "type": "Item",
+      "name": "default-items-ja",
+      "path": "packs/default-items-ja",
+      "system": "juink",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "サンプルキャラクター",
+      "type": "Actor",
+      "name": "sample-character-ja",
+      "path": "packs/sample-character-ja",
+      "system": "juink",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "ロール表",
+      "type": "RollTable",
+      "name": "default-rolltable-ja",
+      "path": "packs/default-rolltable-ja",
       "system": "juink",
       "ownership": {
         "PLAYER": "OBSERVER",
