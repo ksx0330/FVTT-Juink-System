@@ -1,0 +1,118 @@
+{
+    "Juink.Life": "命運",
+    "Juink.Hope": "希望",
+    "Juink.EconomicPower": "経済力",
+    "Juink.Str": "体力",
+    "Juink.Agi": "敏捷",
+    "Juink.Int": "知性",
+    "Juink.Wil": "精神",
+    "Juink.Lck": "幸運",
+    
+    "Juink.Quantity": "個数",
+    "Juink.Effect": "効果",
+    "Juink.Apply": "適用",
+    "Juink.Use": "使用",
+    "Juink.Reset": "初期化",
+    "Juink.Delete": "削除",
+
+    "Juink.Age": "年齢",
+    "Juink.Gender": "性別",
+    "Juink.Native": "出自",
+    "Juink.Appear": "容姿",
+    "Juink.Wish": "願い",
+
+    "Juink.Bags": "アイテム",
+    "Juink.Attributes": "能力値",
+    "Juink.Address": "連絡先",
+    "Juink.Diary": "日記",
+    "Juink.Record": "記録",
+
+    "Juink.Favorite": "大切な人",
+    "Juink.Name": "名前",
+    "Juink.Memo": "メモ",
+
+    "Juink.FateDices": "宿命ダイス",
+    "Juink.Juin": "呪印",
+    "Juink.JuinNum": "画",
+    "Juink.PC": "PC",
+    "Juink.PCNum": "人",
+    "Juink.Mad": "狂気",
+
+    "Juink.Link": "関係性",
+    "Juink.Scene": "シーン",
+    "Juink.Cost": "コスト",
+    "Juink.Target": "対象",
+    "Juink.Limit": "制限",
+    "Juink.None": "なし",
+    "Juink.Phase": "フェーズ",
+    "Juink.Scenario": "シナリオ",
+    "Juink.JuinMultiNumber": "+ [呪印] x 人数",
+    "Juink.Visibility": "公開",
+    "Juink.Obtain": "取得",
+
+    "Juink.DefaultAbilityName": "伏線",
+    "Juink.DefaultAbilityTiming": "任意",
+    "Juink.DefaultAbilityTarget": "使用者",
+    "Juink.DefaultAbilityDesc": "対象は【判定ダイス】+ 4dを行い、同じ【シーン】で《過去と秘密》を1つ使用できる。",
+
+    "Juink.RollDice": "判定ダイス",
+    "Juink.AddRollDice": "ダイス追加",
+    "Juink.Sum": "合計",
+    
+    "Juink.UseAdditionalEffect": "追加効果使用",
+    "Juink.Calculate": "効果算出",
+    "Juink.Decrease": "効果減少",
+    "Juink.AddLife": "命運追加",
+    "Juink.AddHope": "希望追加",
+    "Juink.AddDice": "ダイス追加",
+    "Juink.AddValue": "修正値追加",
+    "Juink.ChangeDice": "Aの目をBに変更",
+    "Juink.reRollDice": "ダイスの目を再ロール",
+    "Juink.RunMacro": "マクロ実行",
+    "Juink.TypeMacro": "マクロ名入力",
+
+    "Juink.inputNumberGuide": "例) 1",
+    "Juink.inputMultiNumberGuide": "例) 1 2",
+    "Juink.inputDiceGuide": "例) 1d6",
+    "Juink.ChangeDiceGuide": "例) [1 6]",
+
+    "Juink.EndPhase": "フェーズ終了",
+    "Juink.EndScenario": "シナリオ終了",
+    
+
+    "Juink.UseHope": "希望を使用して命運を上げますか？",
+    "Juink.UseQuestion": "を使用しますか？",
+    "Juink.UseConfirm": "を使用しました。",
+    "Juink.UseFateDice": "宿命ダイス使用",
+    "Juink.AfterUseFateDice": "を使用しました。",
+    "Juink.ChangeFateDice": "宿命ダイス変更",
+    "Juink.AfterChangeFateDice": "に変更しました。",
+    "Juink.ChargeFateDice": "宿命ダイス補充",
+    "Juink.PurgeFateDice": "宿命ダイスリセット",
+    
+    "Juink.UseLog": "使用履歴",
+
+    "Juink.Influence": "宿命干渉",
+    "Juink.InfluenceDialog": "どの目と交換しますか？",
+    "Juink.ActionDice": "判定ダイス",
+
+    "Juink.Error.AlreadyJob": "すでに職業が設定されています。",
+    "Juink.Error.NotUseItem": "アイテムを使用できません。",
+    "Juink.Error.NotSupportItem": "サポートされていないアイテムです。",
+    "Juink.Error.NotSettedActor": "効果を使用するアクターが設定されていません。",
+    "Juink.Error.AlreadyUseItem": "今フェーズですでにアイテムを使用しました。",
+
+    "Juink.ScenarioHint": "シーンにシナリオアクターを接続してシナリオのイベントと宿命ダイスを連動させることができます。",
+    "Juink.AddDiceHint": "ダイス追加効果のみが適用されます。",
+
+    "TYPES.Actor.character": "キャラクター",
+    "TYPES.Actor.scenario": "シナリオ",
+
+    "TYPES.Item.job": "職業",
+    "TYPES.Item.ability": "過去と秘密",
+    "TYPES.Item.item": "アイテム",
+    "TYPES.Item.event": "イベント",
+    "TYPES.Item.identity": "正体",
+
+    "SETTINGS.SetItemPack": "アイテム辞典設定"
+}
