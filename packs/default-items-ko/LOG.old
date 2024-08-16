@@ -1,21 +1,8 @@
-2024/08/14-00:51:19.555 7928 Recovering log #10
-2024/08/14-00:51:19.558 7928 Delete type=0 #10
-2024/08/14-00:51:19.558 7928 Delete type=3 #8
-2024/08/14-00:53:29.974 4438 Level-0 table #14: started
-2024/08/14-00:53:29.974 4438 Level-0 table #14: 0 bytes OK
-2024/08/14-00:53:29.975 4438 Delete type=0 #12
-2024/08/14-00:53:29.979 4438 Manual compaction at level-0 from '!folders!65romSTJ6YlXaxWF' @ 72057594037927935 : 1 .. '!items!zJVMCQGuIXwOKkdo' @ 0 : 0; will stop at '!folders!VvDs1hAQajYcAQD3' @ 67 : 1
-2024/08/14-00:53:29.979 4438 Compacting 1@0 + 0@1 files
-2024/08/14-00:53:29.986 4438 Generated table #15@0: 1 keys, 463 bytes
-2024/08/14-00:53:29.986 4438 Compacted 1@0 + 0@1 files => 463 bytes
-2024/08/14-00:53:29.986 4438 compacted to: files[ 0 1 1 0 0 0 0 ]
-2024/08/14-00:53:29.987 4438 Delete type=2 #9
-2024/08/14-00:53:29.989 4438 Manual compaction at level-0 from '!folders!VvDs1hAQajYcAQD3' @ 67 : 1 .. '!items!zJVMCQGuIXwOKkdo' @ 0 : 0; will stop at (end)
-2024/08/14-00:53:29.989 4438 Manual compaction at level-1 from '!folders!65romSTJ6YlXaxWF' @ 72057594037927935 : 1 .. '!items!zJVMCQGuIXwOKkdo' @ 0 : 0; will stop at '!folders!VvDs1hAQajYcAQD3' @ 67 : 1
-2024/08/14-00:53:29.989 4438 Compacting 1@1 + 1@2 files
-2024/08/14-00:53:29.992 4438 Generated table #16@1: 63 keys, 26945 bytes
-2024/08/14-00:53:29.992 4438 Compacted 1@1 + 1@2 files => 26945 bytes
-2024/08/14-00:53:29.993 4438 compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/08/14-00:53:29.993 4438 Delete type=2 #5
-2024/08/14-00:53:29.993 4438 Delete type=2 #15
-2024/08/14-00:53:29.996 4438 Manual compaction at level-1 from '!folders!VvDs1hAQajYcAQD3' @ 67 : 1 .. '!items!zJVMCQGuIXwOKkdo' @ 0 : 0; will stop at (end)
+2024/08/14-00:53:34.962 7698 Recovering log #13
+2024/08/14-00:53:34.965 7698 Delete type=0 #13
+2024/08/14-00:53:34.966 7698 Delete type=3 #11
+2024/08/14-00:55:17.296 4438 Level-0 table #20: started
+2024/08/14-00:55:17.296 4438 Level-0 table #20: 0 bytes OK
+2024/08/14-00:55:17.296 4438 Delete type=0 #18
+2024/08/14-00:55:17.298 4438 Manual compaction at level-0 from '!folders!65romSTJ6YlXaxWF' @ 72057594037927935 : 1 .. '!items!zJVMCQGuIXwOKkdo' @ 0 : 0; will stop at (end)
+2024/08/14-00:55:17.298 4438 Manual compaction at level-1 from '!folders!65romSTJ6YlXaxWF' @ 72057594037927935 : 1 .. '!items!zJVMCQGuIXwOKkdo' @ 0 : 0; will stop at (end)
