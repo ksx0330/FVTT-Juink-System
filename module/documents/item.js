@@ -175,7 +175,8 @@ export class JuinkItem extends Item {
         if (updates["system.hope.value"] < 0)
             return false;
 
-        await this.update({"system.used.state": true});
+        if (this.system.used.limit != '-')
+            await this.update({"system.used.state": true});
         await this.actor.update(updates);
         return true;
     }
