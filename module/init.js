@@ -290,10 +290,8 @@ async function addDice(message, dice, add) {
     let roll = new Roll(formula);
     roll.terms[0].number = dice;
 
-    for (let result of mRoll.terms[0].results)
-        roll.terms[0].results.push(result);
-    
     await roll.roll();
+    roll.terms[0].results.unshift(...mRoll.terms[0].results)
     return roll;
 }
 
@@ -320,14 +318,15 @@ async function reRollDice(message, nums) {
     let roll = await mRoll.clone();
     roll.terms[0].number = 0;
 
+    let left = [];
     for (let result of mRoll.terms[0].results) {
         if (nums.includes(result.result))
             roll.terms[0].number += 1;
         else
-            roll.terms[0].results.push(result);
+            left.push(result);
     }
-    
     await roll.roll();
+    roll.terms[0].results.unshift(...left)
     return roll;
 }
 

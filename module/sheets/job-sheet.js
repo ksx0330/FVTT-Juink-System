@@ -4,7 +4,7 @@ export class JuinkJobSheet extends JuinkItemSheet {
 
     /** @override */
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["juink", "sheet", "item"],
             width: 480,
             height: 216,

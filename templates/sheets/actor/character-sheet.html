@@ -245,14 +245,14 @@
                 </div>
     
                 <div class="app-box">
-                    <div class="application move-tab" data-tab="attributes">
+                    <div class="sheet-application move-tab" data-tab="attributes">
                         <div class="app-icon">
                             <img src="systems/juink/assets/profile.PNG" width="40">
                         </div>
                         <label>{{localize "Juink.Attributes"}}</label>
                     </div>
     
-                    <div class="application move-tab item-usage-check" data-tab="bags">
+                    <div class="sheet-application move-tab item-usage-check" data-tab="bags">
                         <div class="app-icon">
                             {{#if system.itemUsage}}
                             <img src="systems/juink/assets/ban.PNG" width="40">
@@ -263,14 +263,14 @@
                         <label>{{localize "Juink.Bags"}}</label>
                     </div>
     
-                    <div class="application move-tab" data-tab="address">
+                    <div class="sheet-application move-tab" data-tab="address">
                         <div class="app-icon">
                             <img src="systems/juink/assets/address.PNG" width="40">
                         </div>
                         <label>{{localize "Juink.Address"}}</label>
                     </div>
     
-                    <div class="application move-tab" data-tab="diary">
+                    <div class="sheet-application move-tab" data-tab="diary">
                         <div class="app-icon">
                             <img src="systems/juink/assets/diary.PNG" width="40">
                         </div>
@@ -284,15 +284,9 @@
                 <div class="roll-box">
                     <div class="title-bar flex">
                         <div class="title">{{localize "Juink.RollDice"}}</div>
+
                         <select class="update-pool" name="system.attributes.dice.select" data-dtype="String">
-                            {{#select system.attributes.dice.select}}
-                            <option value="-">-</option>
-                            <option value="str">{{localize "Juink.Str"}}</option>
-                            <option value="agi">{{localize "Juink.Agi"}}</option>
-                            <option value="int">{{localize "Juink.Int"}}</option>
-                            <option value="wil">{{localize "Juink.Wil"}}</option>
-                            <option value="lck">{{localize "Juink.Lck"}}</option>
-                            {{/select}}
+                            {{ selectOptions diceSelect selected=system.attributes.dice.select }}
                         </select>
                         <button class="add-dice">{{localize "Juink.AddRollDice"}}</button>
                     </div>

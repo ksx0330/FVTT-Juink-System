@@ -9,7 +9,7 @@ export class JuinkActorSheet extends ActorSheet {
 
     /** @override */
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
         classes: ["juink", "sheet", "actor"],
         width: 400,
         height: 800,
@@ -73,6 +73,15 @@ export class JuinkActorSheet extends ActorSheet {
 
         data.enrichedBiography = await TextEditor.enrichHTML(data.system.details.biography, {async: true});
         data.enrichedDiary = await TextEditor.enrichHTML(data.system.details.diary, {async: true});
+
+        data.diceSelect = {
+            "-": "-",
+            "str": game.i18n.localize("Juink.Str"),
+            "agi": game.i18n.localize("Juink.Agi"),
+            "int": game.i18n.localize("Juink.Int"),
+            "wil": game.i18n.localize("Juink.Wil"),
+            "lck": game.i18n.localize("Juink.Lck")
+        }
 
         return data;
     }
@@ -250,7 +259,7 @@ export class JuinkActorSheet extends ActorSheet {
             let callback = async (dice, add, activeEffect) => {
                 let formula = `${dice}D6 + ${add}`;
                 let r = new Roll(formula);
-                await r.roll({async: true});
+                await r.roll();
                 this.actor.toMessage({
                     title: game.i18n.localize("Juink.Calculate"),
                     showList: true,
@@ -281,7 +290,7 @@ export class JuinkActorSheet extends ActorSheet {
             let callback = async (dice, add, activeEffect) => {
                 let formula = `${dice}D6 + ${add}`;
                 let r = new Roll(formula);
-                await r.roll({async: true});
+                await r.roll();
                 this.actor.toMessage({
                     title: game.i18n.localize("Juink.Decrease"),
                     showList: true,
@@ -416,7 +425,7 @@ export class JuinkActorSheet extends ActorSheet {
                 if (value.value == 0)
                     continue;
                 let subItem = await fromUuid(value.uuid);
-                let subItemData = duplicate(subItem);
+                let subItemData = foundry.utils.duplicate(subItem);
                 subItemData.system.quantity.value = subItemData.system.quantity.max = Number(value.value);
                 items.push(subItemData);
             }

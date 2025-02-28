@@ -6,7 +6,7 @@ export class JuinkScenarioSheet extends ActorSheet {
 
     /** @override */
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
         classes: ["juink", "sheet", "scenario"],
         width: 600,
         height: 600,

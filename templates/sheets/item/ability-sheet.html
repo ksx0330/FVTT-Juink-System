@@ -27,20 +27,12 @@
                 <span class="title">{{localize "Juink.Cost"}}</span>
                 <div class="slash-input">
                     <select class="select-type" name="system.cost.normal.type" data-dtype="String">
-                        {{#select system.cost.normal.type}}
-                        <option value="-">{{localize "Juink.None"}}</option>
-                        <option value="hope">{{localize "Juink.Hope"}}</option>
-                        <option value="life">{{localize "Juink.Life"}}</option>
-                        {{/select}}
+                        {{ selectOptions abilityTypeSelect selected=system.cost.normal.type }}
                     </select>
                     <input type="text" name="system.cost.normal.value" value="{{system.cost.normal.value}}"/>
                     <span> / </span>
                     <select class="select-type" name="system.cost.linked.type" data-dtype="String">
-                        {{#select system.cost.linked.type}}
-                        <option value="-">{{localize "Juink.None"}}</option>
-                        <option value="hope">{{localize "Juink.Hope"}}</option>
-                        <option value="life">{{localize "Juink.Life"}}</option>
-                        {{/select}}
+                        {{ selectOptions abilityTypeSelect selected=system.cost.linked.type }}
                     </select>
                     <input type="text" name="system.cost.linked.value" value="{{system.cost.linked.value}}"/>
                 </div>
@@ -53,11 +45,7 @@
                 <span class="title">{{localize "Juink.Limit"}}</span>
                 <div class="flex">
                     <select class="select-type" name="system.used.limit" data-dtype="String">
-                        {{#select system.used.limit}}
-                        <option value="-">{{localize "Juink.None"}}</option>
-                        <option value="phase">{{localize "Juink.Phase"}}</option>
-                        <option value="scenario">{{localize "Juink.Scenario"}}</option>
-                        {{/select}}
+                        {{ selectOptions usedLimitSelect selected=system.used.limit }}
                     </select>
                 </div>
                 
@@ -74,25 +62,11 @@
         <div class="title">{{localize "Juink.Effect"}}</div>
         <div class="flex">
             <select name="system.effect.timing" data-dtype="String">
-                {{#select system.effect.timing}}
-                <option value="-">-</option>
-                <option value="calculate">{{localize "Juink.Calculate"}}</option>
-                <option value="decrease">{{localize "Juink.Decrease"}}</option>
-                <option value="dice">{{localize "Juink.RollDice"}}</option>
-                {{/select}}
+                {{ selectOptions effectTimingSelect selected=system.effect.timing }}
             </select>
     
             <select name="system.effect.type" data-dtype="String">
-                {{#select system.effect.type}}
-                <option value="-">-</option>
-                <option value="addLife">{{localize "Juink.AddLife"}}</option>
-                <option value="addHope">{{localize "Juink.AddHope"}}</option>
-                <option value="addDice">{{localize "Juink.AddDice"}}</option>
-                <option value="addValue">{{localize "Juink.AddValue"}}</option>
-                <option value="changeDice">{{localize "Juink.ChangeDice"}}</option>
-                <option value="reRollDice">{{localize "Juink.reRollDice"}}</option>
-                <option value="runMacro">{{localize "Juink.RunMacro"}}</option>
-                {{/select}}
+                {{ selectOptions abilityEffectTypeSelect selected=system.effect.type }}
             </select>
     
             <input class="effect-value" name="system.effect.value" type="text" value="{{system.effect.value}}" 

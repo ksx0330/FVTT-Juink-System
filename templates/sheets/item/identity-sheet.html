@@ -38,11 +38,7 @@
                 <span class="title">{{localize "Juink.Limit"}}</span>
                 <div class="flex">
                     <select class="select-type" name="system.limit" data-dtype="String">
-                        {{#select system.limit}}
-                        <option value="-">{{localize "Juink.None"}}</option>
-                        <option value="phase">{{localize "Juink.Phase"}}</option>
-                        <option value="scenario">{{localize "Juink.Scenario"}}</option>
-                        {{/select}}
+                        {{ selectOptions usedLimitSelect selected=system.limit }}
                     </select>
                 </div>
                 

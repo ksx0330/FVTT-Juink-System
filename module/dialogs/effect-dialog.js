@@ -116,7 +116,7 @@ export class JuinkEffectDialog extends Dialog {
 
     /** @override */
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             template: "systems/juink/templates/dialogs/effect-dialog.html",
             classes: ["juink", "dialog"],
             width: 400
@@ -137,6 +137,16 @@ export class JuinkEffectDialog extends Dialog {
         data.baseDice = this.baseDice;
 
         return data;
+    }
+
+    submit(button, event) {
+        const target = this.options.jQuery ? this.element : this.element[0];
+        try {
+            if ( button.callback ) button.callback.call(this, target, event);
+            this.close();
+        } catch(err) {
+
+        }
     }
 
     /** @override */

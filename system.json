@@ -3,10 +3,10 @@
   "id": "juink",
   "title": "呪印感染 [주인감염]",
   "description": "呪印感染 [주인감염]",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "compatibility": {
-    "minimum": "11",
-    "verified": "11.315"
+    "minimum": "12",
+    "verified": "12.331"
   },
   "authors": [
     {

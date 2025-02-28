@@ -8,8 +8,7 @@ export class JuinkSceneConfig extends SceneConfig {
             classes: ["sheet", "scene-sheet"],
             template: "systems/juink/templates/sheets/scene/scene-config.html",
             width: 560,
-            height: "auto",
-            tabs: [{navSelector: ".tabs", contentSelector: "form", initial: "basic"}]
+            height: "auto"
         });
     }
 

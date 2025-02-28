@@ -165,7 +165,6 @@ export class JuinkActor extends Actor {
         // Prepare chat data
         messageData = foundry.utils.mergeObject({
             user: game.user.id,
-            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
             content: html,
             sound: CONFIG.sounds.dice,
             speaker: {

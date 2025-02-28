@@ -28,22 +28,12 @@
         <div class="title">{{localize "Juink.Effect"}}</div>
         <div class="flex">
             <select name="system.effect.timing" data-dtype="String">
-                {{#select system.effect.timing}}
-                <option value="-">-</option>
-                <option value="calculate">{{localize "Juink.Calculate"}}</option>
-                <option value="decrease">{{localize "Juink.Decrease"}}</option>
-                <option value="dice">{{localize "Juink.RollDice"}}</option>
+                {{ selectOptions effectTimingSelect selected=system.effect.timing }}
                 {{/select}}
             </select>
     
             <select name="system.effect.type" data-dtype="String">
-                {{#select system.effect.type}}
-                <option value="-">-</option>
-                <option value="addLife">{{localize "Juink.AddLife"}}</option>
-                <option value="addHope">{{localize "Juink.AddHope"}}</option>
-                <option value="addDice">{{localize "Juink.AddDice"}}</option>
-                <option value="runMacro">{{localize "Juink.RunMacro"}}</option>
-                {{/select}}
+                {{ selectOptions itemEffectTypeSelect selected=system.effect.type }}
             </select>
     
             <input class="effect-value" name="system.effect.value" type="text" value="{{system.effect.value}}" 

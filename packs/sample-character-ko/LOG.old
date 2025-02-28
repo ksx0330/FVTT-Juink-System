@@ -1,17 +1,14 @@
-2024/08/14-00:51:19.562 5a4c Recovering log #12
-2024/08/14-00:51:19.562 5a4c Level-0 table #14: started
-2024/08/14-00:51:19.565 5a4c Level-0 table #14: 29608 bytes OK
-2024/08/14-00:51:19.568 5a4c Delete type=0 #12
-2024/08/14-00:51:19.568 5a4c Delete type=3 #10
-2024/08/14-00:51:19.568 4438 Compacting 4@0 + 0@1 files
-2024/08/14-00:51:19.572 4438 Generated table #16@0: 53 keys, 35757 bytes
-2024/08/14-00:51:19.572 4438 Compacted 4@0 + 0@1 files => 35757 bytes
-2024/08/14-00:51:19.572 4438 compacted to: files[ 0 1 0 0 0 0 0 ]
-2024/08/14-00:51:19.573 4438 Delete type=2 #5
-2024/08/14-00:51:19.573 4438 Delete type=2 #8
-2024/08/14-00:51:19.573 4438 Delete type=2 #11
-2024/08/14-00:51:19.573 4438 Delete type=2 #14
-2024/08/14-00:53:29.972 4438 Level-0 table #18: started
-2024/08/14-00:53:29.972 4438 Level-0 table #18: 0 bytes OK
-2024/08/14-00:53:29.973 4438 Delete type=0 #15
-2024/08/14-00:53:29.975 4438 Manual compaction at level-0 from '!actors!44uJFc3O5NYrV9pf' @ 72057594037927935 : 1 .. '!actors.items!wnY9dP3zI50sSOyV.lqaNRVHT34oSBokg' @ 0 : 0; will stop at (end)
+2025/02/28-22:27:39.765 95b0 Recovering log #29
+2025/02/28-22:27:39.768 95b0 Delete type=0 #29
+2025/02/28-22:27:39.768 95b0 Delete type=3 #27
+2025/02/28-22:28:14.672 43cc Level-0 table #34: started
+2025/02/28-22:28:14.674 43cc Level-0 table #34: 39172 bytes OK
+2025/02/28-22:28:14.675 43cc Delete type=0 #32
+2025/02/28-22:28:14.679 43cc Manual compaction at level-0 from '!actors!44uJFc3O5NYrV9pf' @ 72057594037927935 : 1 .. '!actors.items!wnY9dP3zI50sSOyV.lqaNRVHT34oSBokg' @ 0 : 0; will stop at '!actors.items!wnY9dP3zI50sSOyV.lqaNRVHT34oSBokg' @ 142 : 1
+2025/02/28-22:28:14.679 43cc Compacting 1@0 + 1@1 files
+2025/02/28-22:28:14.682 43cc Generated table #35@0: 53 keys, 39172 bytes
+2025/02/28-22:28:14.682 43cc Compacted 1@0 + 1@1 files => 39172 bytes
+2025/02/28-22:28:14.683 43cc compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/02/28-22:28:14.683 43cc Delete type=2 #16
+2025/02/28-22:28:14.683 43cc Delete type=2 #34
+2025/02/28-22:28:14.690 43cc Manual compaction at level-0 from '!actors.items!wnY9dP3zI50sSOyV.lqaNRVHT34oSBokg' @ 142 : 1 .. '!actors.items!wnY9dP3zI50sSOyV.lqaNRVHT34oSBokg' @ 0 : 0; will stop at (end)

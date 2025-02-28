@@ -7,7 +7,7 @@ export class JuinkItemSheet extends ItemSheet {
 
     /** @override */
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["juink", "sheet", "item"],
             width: 350,
             height: 400,
@@ -64,6 +64,54 @@ export class JuinkItemSheet extends ItemSheet {
         data.isGM = game.user.isGM;
         
         data.enrichedBiography = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+
+        data.abilityTypeSelect = {
+            "-": game.i18n.localize("Juink.None"),
+            "hope": game.i18n.localize("Juink.Hope"),
+            "life": game.i18n.localize("Juink.Life")
+        }
+        
+        data.usedLimitSelect = {
+            "-": game.i18n.localize("Juink.None"),
+            "phase": game.i18n.localize("Juink.Phase"),
+            "scenario": game.i18n.localize("Juink.Scenario")
+        }
+
+        data.effectTimingSelect = {
+            "-": "-",
+            "calculate": game.i18n.localize("Juink.Calculate"),
+            "decrease": game.i18n.localize("Juink.Decrease"),
+            "dice": game.i18n.localize("Juink.RollDice")
+        }
+        
+        data.abilityEffectTypeSelect = {
+            "-": "-",
+            "addLife": game.i18n.localize("Juink.AddLife"),
+            "addHope": game.i18n.localize("Juink.AddHope"),
+            "addDice": game.i18n.localize("Juink.AddDice"),
+            "addValue": game.i18n.localize("Juink.AddValue"),
+            "changeDice": game.i18n.localize("Juink.ChangeDice"),
+            "reRollDice": game.i18n.localize("Juink.reRollDice"),
+            "runMacro": game.i18n.localize("Juink.RunMacro")
+        }
+        
+        data.eventEffectTypeSelect = {
+            "-": "-",
+            "addDice": game.i18n.localize("Juink.AddDice"),
+            "addValue": game.i18n.localize("Juink.AddValue"),
+            "changeDice": game.i18n.localize("Juink.ChangeDice"),
+            "reRollDice": game.i18n.localize("Juink.reRollDice"),
+            "runMacro": game.i18n.localize("Juink.RunMacro")
+        }
+
+        data.itemEffectTypeSelect = {
+            "-": "-",
+            "addLife": game.i18n.localize("Juink.AddLife"),
+            "addHope": game.i18n.localize("Juink.AddHope"),
+            "addDice": game.i18n.localize("Juink.AddDice"),
+            "runMacro": game.i18n.localize("Juink.RunMacro")
+        }
+
 
         return data;
     }

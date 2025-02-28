@@ -39,7 +39,7 @@ export class InfluenceDialog extends Dialog {
 
       /** @override */
 	static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             template: "templates/hud/dialog.html",
             classes: ["juink", "dialog"],
             width: 400
