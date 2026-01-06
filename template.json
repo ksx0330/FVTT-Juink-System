@@ -25,7 +25,6 @@
             "lck": { "add": 0 },
 
             "dice": {
-                "open": false,
                 "pool": 0,
                 "select": "-"
             }

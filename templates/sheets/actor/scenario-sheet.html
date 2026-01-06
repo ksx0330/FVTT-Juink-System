@@ -52,9 +52,9 @@
                 <div class="left-box">
                     {{#each actor.otherEventList as |item id|}}
                     <div class="item flex" data-item-id="{{item._id}}">
-                        <img class="show-item" src="{{item.img}}"/>
+                        <img class="show-item" data-tooltip="{{localize 'Juink.Tooltip.showItem'}}"src="{{item.img}}"/>
                         <div class="name">
-                            <label>{{item.name}}</label>
+                            <label class="echo-item" data-tooltip="{{localize 'Juink.Tooltip.toMessage'}}">{{item.name}}</label>
                             <div class="life-bar" style="{{life system.life.value system.life.max}}">
                                 <div class="life">
                                     <input type="text" class="change-event" value="{{system.life.value}}" data-name="system.life.value"/>
@@ -75,9 +75,9 @@
                 <div class="right-box">
                     {{#each actor.selectEventList as |item id|}}
                     <div class="item flex" data-item-id="{{item._id}}">
-                        <img class="show-item" src="{{item.img}}"/>
+                        <img class="show-item" data-tooltip="{{localize 'Juink.Tooltip.showItem'}}"src="{{item.img}}"/>
                         <div class="name">
-                            <label>{{item.name}}</label>
+                            <label class="echo-item" data-tooltip="{{localize 'Juink.Tooltip.toMessage'}}">{{item.name}}</label>
                             <div class="life-bar" style="
                             {{#isSuccess item}}
                                 background: green;
@@ -116,9 +116,9 @@
                 <div class="left-box">
                     {{#each actor.otherIdentityList as |item id|}}
                     <div class="item flex" data-item-id="{{item._id}}">
-                        <img class="show-item" src="{{item.img}}"/>
+                        <img class="show-item" data-tooltip="{{localize 'Juink.Tooltip.showItem'}}"src="{{item.img}}"/>
                         <div class="name">
-                            <label>
+                            <label class="echo-item" data-tooltip="{{localize 'Juink.Tooltip.toMessage'}}">
                                 {{item.name}}<br>
                                 <span style="color : gray; font-size : smaller;"> 
                                     {{localize "Juink.Scene"}} : {{item.system.timing}} | 
@@ -137,9 +137,9 @@
                     {{#each actor.selectIdentityList as |item id|}}
                     {{#visibility item}}
                     <div class="item flex" data-item-id="{{item._id}}">
-                        <img class="show-item" src="{{item.img}}"/>
+                        <img class="show-item" data-tooltip="{{localize 'Juink.Tooltip.showItem'}}"src="{{item.img}}"/>
                         <div class="name">
-                            <label>
+                            <label class="echo-item" data-tooltip="{{localize 'Juink.Tooltip.toMessage'}}">
                                 {{item.name}}<br>
                                 <span style="color : gray; font-size : smaller;"> 
                                     {{localize "Juink.Scene"}} : {{item.system.timing}} | 

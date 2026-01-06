@@ -1,5 +1,3 @@
-
-
 .juink {
   /* Sheet Tabs */
   /* Items List */
@@ -54,7 +52,7 @@
   top: 50px;
   left: 40px;
   width: calc(100% - 80px);
-  height: calc(100% - 90px);
+  height: calc(100% - 100px);
   overflow: hidden;
 }
 
@@ -63,14 +61,15 @@
 }
 
 .juink .main-screen .default-screen {
+  position: relative;
   width: 100%;
-  margin-top: 52px;
+  padding-top: 50px;
+  transition: height 0.3s ease-out;
 }
-
 
 /* Initial Screen */
 .juink .main-screen .default-screen .init-screen {
-  padding-top: 32px;
+
 }
 
 .juink .main-screen .default-screen .init-screen .profile-img {
@@ -108,7 +107,7 @@
   width: 60px;
   position: absolute;
   right: 8px;
-  top: 14px;
+  top: 5px;
 }
 
 .juink .main-screen .default-screen .init-screen .juin img {
@@ -130,9 +129,8 @@
   top: -3px;
 }
 
-
 /* Profile Screen */
-.juink .main-screen .profile-screen .profile-img  {
+.juink .main-screen .profile-screen .profile-img {
   width: 125px;
   height: 125px;
   border: 6px double;
@@ -192,15 +190,14 @@
   height: 25px;
 }
 
-.juink .main-screen .profile-screen .memo .editor, .juink .main-screen .profile-screen .memo .editor-content {
+.juink .main-screen .profile-screen .memo .editor,
+.juink .main-screen .profile-screen .memo .editor-content {
   padding: 0;
   min-height: 220px;
 }
 
-
 /* Attributes Screen */
 .juink .main-screen .attributes-screen {
-
 }
 
 .juink .main-screen .attributes-screen .job-card {
@@ -299,10 +296,8 @@
   min-height: 20px;
 }
 
-
 /* Bags Screen */
 .juink .main-screen .bags-screen {
-
 }
 
 .juink .main-screen .bags-screen .item-bag {
@@ -337,10 +332,10 @@
   box-shadow: 0 0 5px var(--color-shadow-primary);
 }
 
-.juink .main-screen .bags-screen .item-bag .show-item, .juink .main-screen .bags-screen .item-bag .use-item {
+.juink .main-screen .bags-screen .item-bag .show-item,
+.juink .main-screen .bags-screen .item-bag .use-item {
   cursor: pointer;
 }
-
 
 .juink .main-screen .bags-screen .item-bag .item .item-control {
   display: flex;
@@ -364,14 +359,11 @@
   font-weight: bold;
 }
 
-
 /* Bags Screen */
 .juink .main-screen .address-screen {
-
 }
 
 .juink .main-screen .address-screen .address-list {
-
 }
 
 .juink .main-screen .address-screen .address-list .title {
@@ -397,7 +389,6 @@
   font-weight: bold;
   border-radius: 50%;
 }
-
 
 /* Address Screen */
 .juink .main-screen .address-screen .address-list .address {
@@ -447,7 +438,6 @@
   text-align: center;
 }
 
-
 /* Diary Screen */
 .juink .main-screen .diary-screen nav.diary-tabs {
   border-bottom: 1px solid;
@@ -483,15 +473,20 @@
   margin-top: 2px;
 }
 
-.juink .main-screen .diary-screen .diary .editor, .juink .main-screen .diary-screen .diary .editor-content {
+.juink .main-screen .diary-screen .diary .editor,
+.juink .main-screen .diary-screen .diary .editor-content {
   min-height: 400px;
 }
 
-.juink .main-screen .diary-screen .ability, .juink .dialog-content .item-list, .juin-roll-message .item-list {
+.juink .main-screen .diary-screen .ability,
+.juink .dialog-content .item-list,
+.juin-roll-message .item-list {
   margin-top: 2px;
 }
 
-.juink .main-screen .diary-screen .ability .item, .juink .dialog-content .item-list .item, .juin-roll-message .item-list .item {
+.juink .main-screen .diary-screen .ability .item,
+.juink .dialog-content .item-list .item,
+.juin-roll-message .item-list .item {
   margin: 2px 0px;
   padding: 1px;
   border-bottom: 2px solid black;
@@ -499,12 +494,15 @@
   background: #ffffffc4;
 }
 
-.juink .main-screen .diary-screen .ability .disabled, .juink .dialog-content .item-list .disabled {
+.juink .main-screen .diary-screen .ability .disabled,
+.juink .dialog-content .item-list .disabled {
   background: black;
   color: white;
 }
 
-.juink .main-screen .diary-screen .ability .item img, .juink .dialog-content .item-list .item img, .juin-roll-message .item-list .item img {
+.juink .main-screen .diary-screen .ability .item img,
+.juink .dialog-content .item-list .item img,
+.juin-roll-message .item-list .item img {
   width: 50px;
   height: 50px;
   border: 3px double;
@@ -512,33 +510,34 @@
   margin-top: 2px;
 }
 
-.juink .main-screen .diary-screen .ability .item .name, .juink .dialog-content .item-list .item .name, .juin-roll-message .item-list .item .name {
+.juink .main-screen .diary-screen .ability .item .name,
+.juink .dialog-content .item-list .item .name,
+.juin-roll-message .item-list .item .name {
   flex: 1;
   margin-left: 6px;
   font-weight: bold;
 }
 
-.juink .main-screen .diary-screen .ability .item input, .juink .dialog-content .item-list .item .name input {
+.juink .main-screen .diary-screen .ability .item input,
+.juink .dialog-content .item-list .item .name input {
   margin-top: 11px;
 }
 
-
-
-
-
-
+.juink .main-screen .default-screen .footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 
 .juink .main-screen .default-screen .basic-status {
   position: relative;
   width: 100%;
-  height: 80px;
 }
-
 
 .juink .main-screen .default-screen .basic-status .life-title {
   position: absolute;
   left: 62px;
-  bottom: 50px;
+  bottom: 28px;
   width: 60px;
   background: black;
   color: white;
@@ -551,7 +550,7 @@
 .juink .main-screen .default-screen .basic-status .hope-title {
   position: absolute;
   left: 0px;
-  bottom: 50px;
+  bottom: 28px;
   width: 60px;
   background: white;
   color: black;
@@ -564,7 +563,7 @@
 
 .juink .main-screen .default-screen .basic-status .life-bar {
   position: absolute;
-  bottom: 22px;
+  bottom: 0;
   width: 100%;
   color: white;
   height: 28px;
@@ -576,7 +575,6 @@
   margin: 0 auto;
   text-align: center;
 }
-
 
 .juink .main-screen .default-screen .basic-status .life-bar .life input {
   flex: 1;
@@ -618,11 +616,10 @@
   font-size: 16px;
 }
 
-
 .juink .main-screen .default-screen .basic-status .mad {
   position: absolute;
   right: 0;
-  bottom: 22px;
+  bottom: 0;
   width: 76px;
   text-align: center;
   border: 2px solid;
@@ -643,12 +640,10 @@
   margin: 0;
 }
 
-
 .juink .main-screen .default-screen .changable-screen {
   height: calc(85% - 80px);
   overflow: auto;
 }
-
 
 .juink .main-screen .default-screen .app-box {
   display: grid;
@@ -671,7 +666,12 @@
   border: 1px solid #efefef;
 }
 
-.juink .main-screen .default-screen .app-box .sheet-application .app-icon:hover {
+.juink
+  .main-screen
+  .default-screen
+  .app-box
+  .sheet-application
+  .app-icon:hover {
   background: crimson;
   border-color: crimson;
 }
@@ -693,6 +693,8 @@
 .juink .main-screen .roll-screen {
   width: 100%;
   text-align: center;
+  margin-top: 8px;
+  transition: height 0.3s ease-out;
 }
 
 .juink .main-screen .roll-screen .roll-box {
@@ -720,7 +722,6 @@
   font-weight: bold;
 }
 
-
 .juink .main-screen .roll-screen .roll-box .title-bar .add-dice {
   width: 90px;
   padding: 0;
@@ -733,7 +734,6 @@
   border: none;
   border-radius: 0;
 }
-
 
 .juink .main-screen .roll-screen .roll-box .dice-pool {
   height: 80px;
@@ -786,13 +786,15 @@
   height: 98px;
 }
 
-.juink .header .scenario-data .fate-dices, .system-juink .fate-dices {
+.juink .header .scenario-data .fate-dices,
+.system-juink .fate-dices {
   flex: 1;
   border: 3px double;
   margin: 4px 18px;
 }
 
-.juink .header .scenario-data .fate-dices .title, .system-juink .fate-dices .title {
+.juink .header .scenario-data .fate-dices .title,
+.system-juink .fate-dices .title {
   background: black;
   color: white;
   font-weight: bold;
@@ -801,7 +803,8 @@
   cursor: pointer;
 }
 
-.juink .header .scenario-data .fate-dices .dice-box, .system-juink .fate-dices .dice-box {
+.juink .header .scenario-data .fate-dices .dice-box,
+.system-juink .fate-dices .dice-box {
   display: flex;
   gap: 6px;
   width: 300px;
@@ -810,23 +813,27 @@
   padding: 6px 0;
 }
 
-.juink .header .scenario-data .fate-dices .dice-box .dice, .system-juink .fate-dices .dice-box .dice {
+.juink .header .scenario-data .fate-dices .dice-box .dice,
+.system-juink .fate-dices .dice-box .dice {
   width: 50px;
   border: none;
   cursor: pointer;
 }
 
-.juink .header .player, .juink .header .juin {
+.juink .header .player,
+.juink .header .juin {
   width: 60px;
   margin: 4px;
 }
 
-.juink .header .player img, .juink .header .juin img {
+.juink .header .player img,
+.juink .header .juin img {
   border: none;
   height: 66px;
 }
 
-.juink .header .player input, .juink .header .juin input {
+.juink .header .player input,
+.juink .header .juin input {
   border: none;
   font-size: 14px;
   font-weight: bold;
@@ -835,12 +842,12 @@
   background: none;
 }
 
-.juink .header .player .title, .juink .header .juin .title {
+.juink .header .player .title,
+.juink .header .juin .title {
   border-bottom: 2px solid darkred;
   position: relative;
   top: -3px;
 }
-
 
 .juink .scenario-contents {
   position: relative;
@@ -883,7 +890,8 @@
   margin: 6px 0;
 }
 
-.juink .scenario-contents .item-list .left-box, .juink .scenario-contents .item-list .right-box {
+.juink .scenario-contents .item-list .left-box,
+.juink .scenario-contents .item-list .right-box {
   flex: 1;
   height: 100%;
   overflow: auto;
@@ -915,20 +923,22 @@
   margin: 0 4px;
 }
 
-.juink .scenario-contents .item-list .item .name .life-bar {
+.juink .scenario-contents .item-list .item .name .life-bar,
+.juink-item-info .life-bar {
   color: white;
   text-align: center;
 }
 
-.juink .scenario-contents .item-list .item .name .life-bar .life {
+.juink .scenario-contents .item-list .item .name .life-bar .life,
+.juink-item-info .life-bar .life {
   display: flex;
   width: 80px;
   margin: 0 auto;
   text-align: center;
 }
 
-
-.juink .scenario-contents .item-list .item .name .life-bar .life input {
+.juink .scenario-contents .item-list .item .name .life-bar .life input,
+.juink-item-info .life-bar .life input {
   flex: 1;
   border: 0;
   background: none;
@@ -937,7 +947,8 @@
   height: 18px;
 }
 
-.juink .scenario-contents .item-list .item .name .life-bar .life span {
+.juink .scenario-contents .item-list .item .name .life-bar .life span,
+.juink-item-info .life-bar .life span {
   padding: 0;
   font-weight: bold;
 }
@@ -957,25 +968,12 @@
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .window-app.juink.sheet.item .window-content {
   padding: 0;
   background: ghostwhite;
 }
 
 .juink .item .job-card {
-
 }
 
 .juink.item .job-card .flex * {
@@ -992,12 +990,13 @@
   color: white;
   text-align: center;
   border-radius: 0;
-  font-size: 19px;  
+  font-size: 19px;
   height: 32px;
   font-weight: bold;
 }
 
-.juink.item .job-card .desc-section .editor, .juink.item .job-card .desc-section .editor-content {
+.juink.item .job-card .desc-section .editor,
+.juink.item .job-card .desc-section .editor-content {
   min-height: 144px;
   padding: 0 4px;
 }
@@ -1027,7 +1026,6 @@
   width: calc(100% - 2px);
   margin-bottom: 3px;
 }
-
 
 .juink .item-header {
   width: 100%;
@@ -1112,7 +1110,8 @@
   padding-top: 3px;
 }
 
-.juink .editor, .juink .editor-content {
+.juink .editor,
+.juink .editor-content {
   min-height: 220px;
   resize: none;
   padding: 4px;
@@ -1133,7 +1132,8 @@
   padding: 4px;
 }
 
-.juink .item-footer select, .juink .item-footer input {
+.juink .item-footer select,
+.juink .item-footer input {
   background: white;
   text-align: center;
 }
@@ -1170,7 +1170,9 @@
   font-size: 14px;
 }
 
-.juink .ability .item-header .data-row input, .juink .ability .item-header .data-row select, .juink .ability .item-header .data-row .slash-input {
+.juink .ability .item-header .data-row input,
+.juink .ability .item-header .data-row select,
+.juink .ability .item-header .data-row .slash-input {
   flex: 1;
   text-align: center;
 }
@@ -1201,11 +1203,13 @@
   right: -2px;
 }
 
-.juink .ability .editor, .juink .ability .editor-content {
+.juink .ability .editor,
+.juink .ability .editor-content {
   min-height: 170px;
 }
 
-.juink .ability.identity .editor, .juink .ability.identity .editor-content {
+.juink .ability.identity .editor,
+.juink .ability.identity .editor-content {
   min-height: 235px;
 }
 
@@ -1278,9 +1282,9 @@
   font-weight: bold;
 }
 
-
-
-.juink .dialog-content .item-list .title, .juink .dialog-content .additioanl .title, .juin-roll-message .title {
+.juink .dialog-content .item-list .title,
+.juink .dialog-content .additioanl .title,
+.juin-roll-message .title {
   background: black;
   color: white;
   text-align: center;
@@ -1292,19 +1296,21 @@
   cursor: pointer;
 }
 
-
-
-.juink .dialog-content .item-list .item img, .juin-roll-message .item-list .item img {
+.juink .dialog-content .item-list .item img,
+.juin-roll-message .item-list .item img {
   width: 35px;
   height: 35px;
 }
 
-.juink .dialog-content .item-list.item .item .name, .juink .dialog-content .item-list.event .item .name, .juin-roll-message .item .name {
+.juink .dialog-content .item-list.item .item .name,
+.juink .dialog-content .item-list.event .item .name,
+.juin-roll-message .item .name {
   font-size: 16px;
   padding: 7px 0;
 }
 
-.juink .dialog-content .item .item-description, .juin-roll-message .item .item-description {
+.juink .dialog-content .item .item-description,
+.juin-roll-message .item .item-description {
   display: none;
   -webkit-box-flex: 0;
   -ms-flex: none;
@@ -1325,9 +1331,6 @@
   background: white;
 }
 
-
-
-
 .juink .dialog-content .input-bar {
   background: black;
   color: white;
@@ -1344,7 +1347,8 @@
   float: right;
 }
 
-.juink .dialog-content .input-bar a, .juink .dialog-content .input-bar span {
+.juink .dialog-content .input-bar a,
+.juink .dialog-content .input-bar span {
   font-size: 20px;
   line-height: 13px;
   padding: 6px 6px;
@@ -1375,7 +1379,6 @@
   display: inline-block;
 }
 
-
 .juink .dialog-content .additioanl .flex {
   margin-top: 6px;
   gap: 6px;
@@ -1400,13 +1403,16 @@
 }
 
 .juink .dice-select {
-  filter: invert(20%) sepia(85%) saturate(415%) hue-rotate(94deg) brightness(70%) contrast(100%);
-  width:45px;
-  height:45px;
+  filter: invert(20%) sepia(85%) saturate(415%) hue-rotate(94deg)
+    brightness(70%) contrast(100%);
+  width: 45px;
+  height: 45px;
 }
 
-
-
+.juink .show-item,
+.juink .echo-item {
+  cursor: pointer;
+}
 
 .system-juink .always-box {
   position: fixed;
@@ -1415,6 +1421,7 @@
   right: 310px;
   border: 1px solid;
   background: #ddd;
+  cursor: move;
 }
 
 .system-juink .always-box .scenario {
@@ -1424,6 +1431,9 @@
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+}
+
+.system-juink .always-box .scenario .show-scenario {
   cursor: pointer;
 }
 
@@ -1443,7 +1453,6 @@
   font-weight: bold;
   border: none;
 }
-
 
 .juin-roll-message .dice-roll .dice-result .influence {
   flex: none;
@@ -1470,7 +1479,7 @@
 }
 
 .juin-roll-message .use-effect-btn {
-  background: steelblue; 
+  background: steelblue;
   margin-bottom: 4px;
 }
 
@@ -1494,19 +1503,8 @@
   background-color: #535353;
   color: white;
   font-weight: bold;
-padding: 4px 0;
+  padding: 4px 0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* .dice-tooltip-always-open */
 .dice-tooltip-always-open .part-header {
@@ -1594,4 +1592,125 @@ padding: 4px 0;
   position: absolute;
   top: -8px;
   right: 0;
+}
+
+.chat-message {
+}
+
+.chat-message .juink-item-info .header {
+  display: flex;
+  align-items: center;
+}
+
+.chat-message .juink-item-info .header .title {
+  margin-bottom: 2px;
+  font-weight: bold;
+  padding: 3px 0;
+  font-size: 18px;
+}
+
+.chat-message .juink-item-info .header img {
+  margin-right: 4px;
+  margin-bottom: 2px;
+}
+
+
+
+
+/* 드래그 영역 표시자 */
+.drag-area-indicator {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.drag-area-indicator:active {
+  cursor: grabbing;
+}
+
+/* ^ 모양 만들기 */
+.chevron-up {
+  position: relative;
+  width: 14px;
+  bottom: -6px;
+}
+
+.chevron-line {
+  position: absolute;
+  width: 11px;
+  height: 3px;
+  background: rgba(0, 0, 0);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.chevron-line.left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  transform-origin: left center;
+}
+
+.chevron-line.right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: right center;
+}
+
+/* Hover 효과 */
+.drag-area-indicator:hover .chevron-line {
+  background: rgba(0, 0, 0);
+  height: 4px;
+}
+
+/* 주사위 탭이 열렸을 때 v 모양으로 변경 */
+.drag-area-indicator.dice-opened .chevron-up {
+  transform: rotate(180deg);
+  top: -4px;
+}
+
+/* 애니메이션 효과 (선택사항) */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes bounceFlipped {
+  0%, 100% { transform: rotate(180deg) translateY(0); }
+  50% { transform: rotate(180deg) translateY(-4px); }
+}
+
+/* 닫혀있을 때 애니메이션 (위로) */
+.drag-area-indicator:not(.dice-opened) .chevron-up {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* 열려있을 때 애니메이션 (아래로) */
+.drag-area-indicator.dice-opened .chevron-up {
+  animation: bounceFlipped 2s ease-in-out infinite;
+}
+
+/* Hover 중에는 애니메이션 멈춤 */
+.drag-area-indicator:hover .chevron-up {
+  animation: none !important;
+}
+
+/* 드래그 중일 때 */
+.drag-area-indicator:active .chevron-up {
+  animation: none !important;
+}
+
+.drag-area-indicator:active:not(.dice-opened) .chevron-up {
+  transform: scale(1.1);
+}
+
+.drag-area-indicator:active.dice-opened .chevron-up {
+  transform: rotate(180deg) scale(1.1);
 }

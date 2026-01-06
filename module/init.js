@@ -71,6 +71,36 @@ Hooks.once("init", async function() {
 Hooks.once("ready", async function() {
     let content = `<div class="always-box"></div>`;
     $("body").append(content);
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    $('.always-box').on('mousedown', function(e) {
+        if ($(e.target).is('button, img, .show-scenario, .title, .dice')) {
+            return;
+        }
+
+        isDragging = true;
+        offsetX = e.clientX - $(this).offset().left;
+        offsetY = e.clientY - $(this).offset().top;
+        $(this).css('cursor', 'grabbing');
+    });
+
+    $(document).on('mousemove', function(e) {
+    if (isDragging) {
+        $('.always-box').css({
+            left: e.clientX - offsetX + 'px',
+            top: e.clientY - offsetY + 'px',
+            right: 'auto'
+        });
+    }
+    });
+
+    $(document).on('mouseup', function() {
+        isDragging = false;
+        $('.always-box').css('cursor', 'move');
+    });
+    
     updateAlwaysBox();
 });
 
@@ -101,7 +131,7 @@ function updateAlwaysBox() {
 
     $(".always-box").empty();
     let content = `
-        <div class="scenario">${scenario.name}</div>
+        <div class="scenario"><span class="show-scenario">${scenario.name}</span></div>
         <div class="fate-dices">
             <div class="title">${game.i18n.localize("Juink.FateDices")}</div>
             <div class="dice-box">`;
@@ -126,7 +156,7 @@ function updateAlwaysBox() {
     `;
     $(".always-box").append(content);
 
-    $(".always-box .scenario").click(() => scenario.sheet.render(true));
+    $(".always-box .show-scenario").click(() => scenario.sheet.render(true));
     $(".always-box .fate-dices .title").on('mousedown', async event => {
         if (!game.user.isGM)
             return;

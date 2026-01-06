@@ -21,3 +21,5 @@ Changelog
 1.0.9 - Japanese language support
 
 1.1.0 - Compatible Update v12
+
+1.1.1 - Add features of exporting Event / Identity to message

@@ -105,6 +105,11 @@
     "Juink.ScenarioHint": "シーンにシナリオアクターを接続してシナリオのイベントと宿命ダイスを連動させることができます。",
     "Juink.AddDiceHint": "ダイス追加効果のみが適用されます。",
 
+    "Juink.Tooltip.showItem": "シートを開きます。",
+    "Juink.Tooltip.toMessage": "チャットウィンドウに送信します。",
+    "Juink.Tooltip.useItem": "アイテムを使用します。",
+    "Juink.Tooltip.itemBan": "すでにアイテムを使用しています。右クリックで解除可能",
+
     "TYPES.Actor.character": "キャラクター",
     "TYPES.Actor.scenario": "シナリオ",
 

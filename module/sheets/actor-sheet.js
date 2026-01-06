@@ -83,6 +83,8 @@ export class JuinkActorSheet extends ActorSheet {
             "lck": game.i18n.localize("Juink.Lck")
         }
 
+        data.diceOpen = game.user.getFlag('world', `juink.sheet.${this.actor.id}.diceOpen`) ?? false;
+
         return data;
     }
   
@@ -105,43 +107,105 @@ export class JuinkActorSheet extends ActorSheet {
             item.sheet.render(true);
         });
 
+        this.drag = false;
+        this.dragPoint = 0;
+        this.MaxdragPoint = 24;
+
+        // 드래그 시작
+        html.find(".phone-content").on("mousedown", e => {
+            // 버튼이나 입력 필드를 클릭한 경우 드래그 무시
+            if ($(e.target).is('button, input, a, img, select, textarea')) {
+                return;
+            }
+            
+            this.drag = true;
+            this.clientY = e.clientY;
+            this.dragPoint = game.user.getFlag('world', `juink.sheet.${this.actor.id}.diceOpen`) ? this.MaxdragPoint : 0;
+            document.body.style.cursor = 'grabbing';
+            e.preventDefault(); // 텍스트 선택 방지
+        });
+
+        // 드래그 중
+        html.find(".phone-content").on("mousemove", e => {
+            if (!this.drag) return;
+
+            // 드래그 거리 계산 (민감도 조절)
+            this.dragPoint += (this.clientY - e.clientY) / 3;
+            
+            // 범위 제한
+            if (this.dragPoint > this.MaxdragPoint)
+                this.dragPoint = this.MaxdragPoint;
+            if (this.dragPoint < 0)
+                this.dragPoint = 0;
+
+            // UI 업데이트
+            html.find(".roll-screen").css({
+                "height": this.dragPoint + "%",
+                "display": "block"
+            });
+            html.find(".default-screen").css("height", (100 - this.dragPoint) + "%");
+
+            this.clientY = e.clientY;
+        });
+
+        // 드래그 종료
+        html.find(".phone-content").on("mouseup mouseleave", async e => {
+            if (!this.drag) return;
+            
+            this.drag = false;
+            document.body.style.cursor = 'auto';
+            
+            // 절반 이상 열렸으면 완전히 열기, 아니면 닫기
+            const threshold = this.MaxdragPoint / 2;
+            
+            if (this.dragPoint > threshold) {
+                this.dragPoint = this.MaxdragPoint;
+                html.find(".roll-screen").css("height", this.MaxdragPoint + "%");
+                html.find(".default-screen").css("height", (100 - this.MaxdragPoint) + "%");
+                html.find(".drag-area-indicator").addClass("dice-opened");
+                await game.user.setFlag('world', `juink.sheet.${this.actor.id}.diceOpen`, true);
+            } else {
+                this.dragPoint = 0;
+                html.find(".roll-screen").css({
+                    "height": "0",
+                    "display": "none"
+                });
+                html.find(".default-screen").css("height", "100%");
+                html.find(".drag-area-indicator").removeClass("dice-opened");
+                await game.user.setFlag('world', `juink.sheet.${this.actor.id}.diceOpen`, false);
+            }
+        });
+
+        html.find(".drag-area-indicator").click( async e => {
+            const currentState = game.user.getFlag('world', `juink.sheet.${this.actor.id}.diceOpen`) ?? false;
+            const newState = !currentState;
+            
+            if (newState) {
+                // 열기
+                this.dragPoint = this.MaxdragPoint;
+                await game.user.setFlag('world', `juink.sheet.${this.actor.id}.diceOpen`, true);
+                html.find(".roll-screen").css({
+                    "height": this.MaxdragPoint + "%",
+                    "display": "block"
+                });
+                html.find(".default-screen").css("height", (100 - this.MaxdragPoint) + "%");
+                html.find(".drag-area-indicator").addClass("dice-opened");
+            } else {
+                // 닫기
+                this.dragPoint = 0;
+                await game.user.setFlag('world', `juink.sheet.${this.actor.id}.diceOpen`, false);
+                html.find(".roll-screen").css({
+                    "height": "0",
+                    "display": "none"
+                });
+                html.find(".default-screen").css("height", "100%");
+                html.find(".drag-area-indicator").removeClass("dice-opened");
+            }
+
+        });
+
         // Everything below here is only needed if the sheet is editable
         if (!this.options.editable) return;
-
-        this.drag = false;
-        this.moved = false;
-        this.dragPoint = 0;
-        this.MaxdragPoint = 25;
-
-        let timeoutId = 0;
-        let onDragCheck = e => {
-            document.body.style.cursor = 'pointer';
-            this.drag = true;
-            this.moved = false;
-            this.clientY = e.clientY;
-            this.dragPoint = (this.document.system.attributes.dice.open) ? this.MaxdragPoint : 0;
-        }
-
-        html.find(".phone-content").on("mouseup mouseleave", async e => {
-            document.body.style.cursor = 'auto';
-            clearTimeout(timeoutId);
-
-            this.drag = false;
-            if (!this.moved)
-                return;
-            
-            if (this.dragPoint < (this.MaxdragPoint - 5)) {
-                this.dragPoint = 0;
-                html.find(".default-screen").css("height", "95%");
-                html.find(".roll-screen").css("display", "none");
-                await this.document.update({"system.attributes.dice.open": false});
-            } else
-                await this.document.update({"system.attributes.dice.open": true});
-        });
-        html.find(".phone-content").mousedown(e => {
-            timeoutId = setTimeout(() => onDragCheck(e), 400);
-        });
-        html.find(".phone-content").mousemove(this._onChangeVisibilityRollSection.bind(this, html));
 
         html.find(".dice").click(e => {
             if (e.currentTarget.classList.contains("unchecked")) {
